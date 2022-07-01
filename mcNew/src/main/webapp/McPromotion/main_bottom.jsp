@@ -229,7 +229,7 @@
 			}
 			function gotoCommonSearch(){
 				if($.trim($("#commonSearchWord").val())==""){
-					alert("검색어을 입력해 주세요");
+					alert("검색어를 입력해 주세요");
 					$("#commonSearchWord").focus();
 				}else{
 					$("#commonSearchForm").attr("action","/kor/search.do");
