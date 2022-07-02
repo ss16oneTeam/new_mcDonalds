@@ -23,6 +23,9 @@ Connection con = null;
 PreparedStatement pstmt = null;
 ResultSet rs = null;
 
+int row_rank = 0;
+int high_rank = 5;
+
 String sql="\r\n"
 		+ "select p_title, IMGVD_PATH , i.p_code\r\n"
 		+ "from promotion p join PROMOTION_IMG i on p.p_code = i.p_code\r\n"
