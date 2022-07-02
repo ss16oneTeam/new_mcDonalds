@@ -258,24 +258,50 @@
 			id를 부여하거나 commonJs.swiperSetup( $('.class:eq(0)') ) , commonJs.swiperSetup( $('.class:eq(1)') )  개별 호출이 필요
 		 -->
 			
+		
 		<div class="mainEvent basicSwiper">
+			<c:if test="${ empty Blist }">
+			<h3>이미지가 없습니다.</h3>
+			</c:if>
+			
+			
+			<c:if test="${not empty Blist }">
+			
+			
+			
+			
+			
+			
+			
+			
 			<button type="button" class="ctrl prev" tabindex="0" role="button" aria-label="Previous slide">이전</button>
 			<div class="swiper swiper-container swiper-container-horizontal">
-				<ul class="swiper-wrapper" style="transform: translate3d(-5637px, 0px, 0px); transition-duration: 0ms;"><li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="11" style="width: 1879px; visibility: hidden;"><a href="/kor/promotion/detail.do?page=1&amp;seq=320&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=0408_Strawberry"><img src="/upload/main/banner/1641377444960.png" alt="신선한 우유와 딸기의 진한 만남_1등급 원유 사용 베리 스트로베리 맥플러리, 스트로베리콘"></a></li>
+				<ul class="swiper-wrapper" style="transform: translate3d(-5637px, 0px, 0px); transition-duration: 0ms;">
+				
+				
+				<li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="11" style="width: 1879px; visibility: hidden;"><a href="/kor/promotion/detail.do?page=1&amp;seq=320&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=0408_Strawberry"><img src="/upload/main/banner/1641377444960.png" alt="신선한 우유와 딸기의 진한 만남_1등급 원유 사용 베리 스트로베리 맥플러리, 스트로베리콘"></a></li>
 				
 				
 					
-						
-						
-					<li class="swiper-slide" data-swiper-slide-index="0" style="width: 1879px; visibility: hidden;"><a href="https://www.mcdonalds.co.kr/kor/promotion/detail.do?seq=369&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=2022_McCrispy"><img src="/upload/main/banner/1653467570689.png" alt="100% 통닭다리살 먹어봐야 아는 맛!"></a></li>
+					<%-- 	
+					<c:forEach items="${ Blist }" var="dtos" begin="0" end="0" >
+					<li class="swiper-slide" data-swiper-slide-index="0" style="width: 1879px; visibility: hidden;"><a href="https://www.mcdonalds.co.kr/kor/promotion/detail.do?seq=369&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=2022_McCrispy"><img src="${dtos.IMGVD_PATH}" alt="100% 통닭다리살 먹어봐야 아는 맛!"></a></li>
+					</c:forEach>
+	
+					
+					<c:forEach items="${ Blist }" var="dtos" begin="1" end="1" >
+					<li class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1" style="width: 1879px; visibility: hidden;"><a href="https://www.mcdonalds.co.kr/kor/promotion/detail.do?seq=374&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=2022_McCafe"><img src="${dtos.IMGVD_PATH}" alt="달콤한 아이스크림과 진~한 라떼의 만남!"></a></li>
+					</c:forEach>
+					 --%>
 					
 					
+					
+					<c:forEach items="${ Blist }" var="dtos" begin="2" end="4" >
+						
+					<li class="swiper-slide" data-swiper-slide-index="4" style="width: 1879px; visibility: hidden;"><a href="/kor/promotion/detail.do?seq=371&amp;utm_medium=pc_corp_site&amp;utm_source=Main_banner&amp;utm_campaign=2022_McWing"><img src="${ dtos.IMGVD_PATH }" alt="겉은 바삭 속은 쫄깃! 2022년 맥윙™ 출시!"></a></li>
+					
+					</c:forEach>
 				
-					
-						
-						
-					<li class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1" style="width: 1879px; visibility: hidden;"><a href="https://www.mcdonalds.co.kr/kor/promotion/detail.do?seq=374&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=2022_McCafe"><img src="/upload/main/banner/1655282479287.jpg" alt="달콤한 아이스크림과 진~한 라떼의 만남!"></a></li>
-					
 					
 				
 					
@@ -288,16 +314,18 @@
 
 
 					<!-- /* 2022.01.27 KV 비디오 추가 */ -->
+					<c:forEach items="${ Blist }" var="dtos" begin="0" end="0" >
 				    <li class="video swiper-slide swiper-slide-active" data-swiper-slide-index="2" style="width: 1879px; visibility: visible;">
 				   		<span>
 							<div class="video-box">
 								<video muted="" playsinline="" autoplay="" data-time="30000">
-									<source src="/kor/images/main/0404_McD_BB_BigMac_30_1920x540.mp4" type="video/mp4">
+									<source src="${dtos.IMGVD_PATH }" type="video/mp4">
 								</video>
 								<button type="button" class="sound off">Sound on</button>
 							</div>
 						</span>
 					</li>
+					</c:forEach>
 					<!-- /* 2022.01.27 KV 비디오 추가 끝 */ -->
 
 
@@ -310,74 +338,29 @@
 
 
 					<!-- /* 2022.01.27 KV 비디오 추가 */ -->
+					<c:forEach items="${ Blist }" var="dtos" begin="1" end="1" >
 				    <li class="video swiper-slide swiper-slide-next" data-swiper-slide-index="3" style="width: 1879px; visibility: hidden;">
 				   		<span>
 							<div class="video-box">
 								<video muted="" playsinline="" autoplay="" data-time="6000">
-									<source src="/kor/images/main/0422_McCafe_banner_pc_1920x540.mp4" type="video/mp4">
+									<source src="${dtos.IMGVD_PATH }" type="video/mp4">
 								</video>
 								<button type="button" class="sound off">Sound on</button>
 							</div>
 						</span>
 					</li>
+					</c:forEach>
 					<!-- /* 2022.01.27 KV 비디오 추가 끝 */ -->
 
-
-						
-					<li class="swiper-slide" data-swiper-slide-index="4" style="width: 1879px; visibility: hidden;"><a href="/kor/promotion/detail.do?seq=371&amp;utm_medium=pc_corp_site&amp;utm_source=Main_banner&amp;utm_campaign=2022_McWing"><img src="/upload/main/banner/1653977979670.png" alt="겉은 바삭 속은 쫄깃! 2022년 맥윙™ 출시!"></a></li>
 					
-					
-				
 					
 						
-						
-					<li class="swiper-slide" data-swiper-slide-index="5" style="width: 1879px; visibility: hidden;"><a href="/kor/promotion/detail.do?page=1&amp;seq=356&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=0310_MyMcD"><img src="/upload/main/banner/1646731135357.png" alt="구매 금액 100원 당 5포인트 적립되는 마이 맥도날드 리워드 출시! 첫 적립 시 맥너겟 무료 (맥너겟으로 교환 가능한 1,500 포인트로 증정드립니다.)"></a></li>
 					
-					
-				
-					
-						
-						
-					<li class="swiper-slide" data-swiper-slide-index="6" style="width: 1879px; visibility: hidden;"><a href="https://www.mcdonalds.co.kr/kor/promotion/detail.do?seq=359&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=0428_Family"><img src="/upload/main/banner/1651049844415.png" alt="100% 당첨의 스크래치 카드까지! 레고랜드 투게더팩!"></a></li>
-					
-					
-				
-					
-						
-						
-					<li class="swiper-slide" data-swiper-slide-index="7" style="width: 1879px; visibility: hidden;"><a href="https://www.mcdonalds.co.kr/kor/promotion/detail.do?seq=367&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=0512_BAQ2"><img src="/upload/main/banner/1652851448896.png" alt="모두가 해피한 스낵 할인 체리 맥피즈 출시!"></a></li>
-					
-					
-				
-					
-						
-						
-					<li class="swiper-slide" data-swiper-slide-index="8" style="width: 1879px; visibility: hidden;"><a href="https://www.mcdonalds.co.kr/kor/promotion/detail.do?seq=368&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=2022_Chiller"><img src="/upload/main/banner/1652253813878.jpg" alt="상큼함이 하늘을 칠러!   NEW 한라봉&amp;애플망고 칠러"></a></li>
-					
-					
-				
-					
-						
-						
-					<li class="swiper-slide" data-swiper-slide-index="9" style="width: 1879px; visibility: hidden;"><a href="https://www.mcdonalds.co.kr/kor/promotion/detail.do?seq=364&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=0428_Hershey"><img src="/upload/main/banner/1651049998003.png" alt="진한 초콜릿과 함께! 달콤바삭하게!  허쉬 프레첼 맥플러리 출시"></a></li>
-					
-					
-				
-					
-						
-						
-					<li class="swiper-slide" data-swiper-slide-index="10" style="width: 1879px; visibility: hidden;"><img src="/upload/main/banner/1633532684256.png" alt="점심을 제대로 굿런치 맥런치_맥치킨 모짜렐라, 베이컨 토마토 디럭스, 더블 불고기 버거, 빅맥, 맥스파이시 상하이 버거, 1955 버거, 더블 필레 오 피쉬, 쿼터파운더 치즈"></li>
-					
-					
-				
-					
-						
-						
-					<li class="swiper-slide" data-swiper-slide-index="11" style="width: 1879px; visibility: hidden;"><a href="/kor/promotion/detail.do?page=1&amp;seq=320&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=0408_Strawberry"><img src="/upload/main/banner/1641377444960.png" alt="신선한 우유와 딸기의 진한 만남_1등급 원유 사용 베리 스트로베리 맥플러리, 스트로베리콘"></a></li>
-					
-					
-				
-			<li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" style="width: 1879px; visibility: hidden;"><a href="https://www.mcdonalds.co.kr/kor/promotion/detail.do?seq=369&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=2022_McCrispy"><img src="/upload/main/banner/1653467570689.png" alt="100% 통닭다리살 먹어봐야 아는 맛!"></a></li></ul>
+				<li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" style="width: 1879px; visibility: hidden;"><a href="https://www.mcdonalds.co.kr/kor/promotion/detail.do?seq=369&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=2022_McCrispy"><img src="/upload/main/banner/1653467570689.png" alt="100% 통닭다리살 먹어봐야 아는 맛!"></a></li></ul>
+			
+			</c:if>
+			
+			
 			<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
 		
 			<button type="button" class="ctrl next" tabindex="0" role="button" aria-label="Next slide">다음</button>
@@ -386,6 +369,22 @@
 				<button type="button" class="play pause">정지</button><!-- 재생표시 <button type="button" class="play">재생</button> -->
 			</div>
 		</div>
+		
+		
+		
+		 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 			
 				<!-- //[3] -->
 				<div class="contArea mainCont">
