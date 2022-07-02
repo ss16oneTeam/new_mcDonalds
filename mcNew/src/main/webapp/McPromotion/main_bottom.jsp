@@ -150,7 +150,7 @@
 
 
 	<div class="headArea">
-				<strong class="hLogo"><a href="/" class="logo" title="메인으로 이동"><img src="/kor/images/common/logo.png" alt="맥도날드"></a></strong>
+				<strong class="hLogo"><a href="/" class="logo" title="메인으로 이동"><img src="https://www.mcdonalds.co.kr/kor/images/common/logo.png" alt="맥도날드"></a></strong>
 				<nav class="hMenu">
 					<div class="menu">
 						<ul class="depth1">
@@ -408,7 +408,7 @@
 							</c:if>
 						</ul>
 
-						<div class="btnMore" id="btnMore" style="display: none;">
+						<div class="btnMore" id="btnMore">
 							<a href="javascript:more();" class="more" title="더보기">더보기</a>
 						</div>
 					</div>
@@ -421,6 +421,38 @@
 				</form>		
 
 <!-- ajax 더보기 -->
+<!--  더보기 추가 220702 -->
+ <script>
+ $(function (){
+	 
+	
+ 	
+     $("#btnMore").on("click", function(event) {
+        $.ajax({
+               
+              url:"prmtMore.jsp",   
+              dataType:"json",            
+               type:"GET",
+               cache:false,                     
+               success:function (data, textStatus, jqXHR){ 
+                 
+                  $( data.MoreData ).each( function ( i , elem ){
+                	  
+                 	 var adddiv =  "<li><a href='#'><div class='tmb'><img src='"+ elem.IMGVD_PATH +";'>"
+                 		 adddiv += "</div> <div class='con'> <strong class='tit' style='font-size:18px; font-weight:900; color:#292929;'>"+ elem.p_title +"</strong></div></a></li>";
+	
+                     $("#menuList").append( adddiv ) ;
+                  } ) ;
+                  
+               }, 
+               error:function (){
+                  alert("에러~~");
+               }
+           });
+     }) // click
+ }); // ready
+ 
+ </script>
 <script type="text/javascript" src="/cert/js/KmcCert.js"></script>
 <script type="text/javascript">
 var init_page =0;
@@ -431,7 +463,7 @@ $(document).ready(function (){
 	daylock();
 	getList(1);	
 });
-function getList(page_val){
+/* function getList(page_val){
 	$.post("/kor/mainContent.do",
 			{	page:page_val },	
 			function(data){
@@ -456,7 +488,7 @@ function getList(page_val){
 	);
 	
 }
-
+ */
 
 /*  */
 function daylock(){
