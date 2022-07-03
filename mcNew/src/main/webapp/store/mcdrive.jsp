@@ -1,5 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="/layout/header.jsp" %>
+<%@ include file="/layout/footer.jsp" %>
+
 
 <html lang="ko"><head>
 <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-4RDYNH3QTJ&amp;l=dataLayer&amp;cx=c"></script><script src="https://connect.facebook.net/signals/config/2808577885918545?v=2.9.64&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-W5TBQX4"></script><script>
@@ -138,8 +141,11 @@
 <!-- End Google Tag Manager (noscript) -->
 
 	<div class="skipMenu"><a href="#container">본문 바로가기</a></div>
+	<!-- 
 	<div class="wrapper ">
-		<header class="header"><!-- 상단 고정 fixed 클래스 추가, 메뉴의 depth1 오버시 open 클래스 추가 -->
+	
+	
+		<header class="header">상단 고정 fixed 클래스 추가, 메뉴의 depth1 오버시 open 클래스 추가
 			
     
 
@@ -150,8 +156,8 @@
 				<nav class="hMenu">
 					<div class="menu">
 						<ul class="depth1">
-							<li><!-- li 오버시 on 클래스 추가 -->
-								<a href="javascript:gotoMenu(1);" class="dth1 ">Menu</a><!-- 현재페이지 메뉴에 current 클래스 추가 -->
+							<li>li 오버시 on 클래스 추가
+								<a href="javascript:gotoMenu(1);" class="dth1 ">Menu</a>현재페이지 메뉴에 current 클래스 추가
 								<ul class="depth2">
 									<li><a href="javascript:gotoMenu(1);" class="dth2">버거</a></li>
 									<li><a href="javascript:gotoMenu(14);" role="button">맥런치</a></li>
@@ -160,7 +166,7 @@
 									<li><a href="javascript:gotoMenu(7);" class="dth2">사이드 &amp; 디저트</a></li>
 									<li><a href="javascript:gotoMenu(9);" class="dth2">맥카페 &amp; 음료</a></li>
 									<li><a href="javascript:gotoMenu(5);" class="dth2">해피밀</a></li>
-									<!-- <li><a href="javascript:gotoMenu(11);" class="dth2">365일 즐거운 혜택</a></li> -->
+									<li><a href="javascript:gotoMenu(11);" class="dth2">365일 즐거운 혜택</a></li>
 								</ul>
 							</li>
 							<li>
@@ -177,7 +183,7 @@
 								<ul class="depth2">
 									<li><a href="/kor/promotion/list.do" class="dth2">프로모션</a></li>
 									<li><a href="/kor/news/list.do" class="dth2">새로운 소식</a></li>
-									<!--  li><a href="/kor/kitchen.do" class="dth2">주방공개의 날</a></li -->
+									 li><a href="/kor/kitchen.do" class="dth2">주방공개의 날</a></li
 								    <li><a href="/kor/happymeal/list.do" class="dth2">이달의 해피밀</a></li> 
 								</ul>
 							</li>
@@ -192,13 +198,13 @@
 							</li>
 						</ul>
 					</div>
-					<!-- //menu -->
+					//menu
 					<form id="commonSearchForm" method="post">
 					<div class="util">
 						<a href="/kor/store/rental.do" class="renter" title="임차문의로 이동">임차문의</a>					
 						<a href="/kor/story/people/recruit.do" class="recruit" title="인재채용으로 이동">RECRUIT</a>
 						<a href="/eng/main.do" class="lang" title="영문사이트로 이동">ENG</a>
-						<div class="topSearch"><!-- 검색 활성화인 경우 open 클래스 추가 -->
+						<div class="topSearch">검색 활성화인 경우 open 클래스 추가
 							<button type="button" class="srch">검색 열기</button>
 							<fieldset class="srchField">
 								<legend>통합검색</legend>
@@ -211,7 +217,7 @@
 						</div>
 					</div>
 					</form>
-					<!-- //util -->
+					//util
 				</nav>
 			</div>
 		<form id="gotoMenuForm" method="post">
@@ -234,7 +240,8 @@
 			}
 	</script>
 		</header>
-		<!-- //header -->
+		//header -->
+		
 		<div id="container">
 			<div class="content">
 				
@@ -270,7 +277,7 @@
 						</ul>-->
 						<!-- //수정 -->
 						<div class="btnArea">
-							<a href="javascript:go();" class="btnMC btnL">맥드라이브 매장 검색하기</a>
+							<a href="/store/list.do;" class="btnMC btnL">맥드라이브 매장 검색하기</a>
 						</div>
 					</div>
 				</div>
@@ -291,17 +298,19 @@
 			</div>
 			<button type="button" class="btnTop">맨 위로 가기</button>
 		</div>
+		
 		<!-- //container -->
+		<!-- 
 		<footer class="footer">
 			
 			<div class="footArea">
 				<ul class="fUtil">
 					<li class="privacy"><a href="/kor/etc/private.do">개인정보 처리방침</a></li>
-					<li><a href="/kor/etc/location.do">위치정보 이용약관</a></li><!-- 추가 -->
+					<li><a href="/kor/etc/location.do">위치정보 이용약관</a></li>추가
 					<li><a href="/kor/etc/sitemap.do">사이트맵</a></li>
 					<li><a href="/kor/store/rental.do">임차문의</a></li>
 					<li><a href="https://voc.mcd.co.kr/MC/HOM/faqMain.jsp" target="_blank" title="새창 열림">고객문의</a></li>
-					<!-- <li><a href="javascript:systemCheck('https://voc.mcd.co.kr/MC/HOM/faqMain.jsp')" title="새창 열림">고객문의</a></li> -->					
+					<li><a href="javascript:systemCheck('https://voc.mcd.co.kr/MC/HOM/faqMain.jsp')" title="새창 열림">고객문의</a></li>					
 				    <li><a href="/kor/story/people/recruit.do">인재채용</a></li> 
 				</ul>
 				<ul class="fSns">
@@ -326,10 +335,10 @@
 				</div>
 			</div>	
 		</footer>
-		<!-- //footer -->
+		//footer
 	</div>
-	<!-- //wrapper -->
-	
+	//wrapper
+	 -->
 
 
 
