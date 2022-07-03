@@ -176,7 +176,7 @@
 									<li><a href="/kor/store/main.do" class="dth2">매장찾기</a></li>
 									<li><a href="/kor/store/mcdelivery.do" class="dth2">맥딜리버리</a></li>
 									<li><a href="<%=contextPath %>/store/mcdrive.jsp" class="dth2">맥드라이브</a></li>
-									<li><a href="/kor/store/rental.do" class="dth2">임차문의</a></li>
+									<li><a href="<%=contextPath %>/store/rental.jsp" class="dth2">임차문의</a></li>
 								</ul>
 							</li>
 							<li>
