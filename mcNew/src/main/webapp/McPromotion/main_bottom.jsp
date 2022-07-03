@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ include file="/include.jspf" %>
-
+<%@ include file="/layout/header.jsp" %>
 
 <html lang="ko">
 <head>
@@ -144,6 +143,7 @@
 <!-- End Google Tag Manager (noscript) -->
 
 	<div class="skipMenu"><a href="#container">본문 바로가기</a></div>
+	<%-- 
 	<div class="wrapper ">
 		<header class="header" style="margin-top: 0px;"><!-- 상단 고정 fixed 클래스 추가, 메뉴의 depth1 오버시 open 클래스 추가 -->
 			
@@ -241,6 +241,9 @@
 	</script>
 		</header>
 		<!-- //header -->
+		 --%>
+		
+		
 		<div id="container">
 			<div class="content">
 				
