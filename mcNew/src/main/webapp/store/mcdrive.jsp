@@ -1,20 +1,17 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ include file="/include.jspf" %>
+<%@ include file="/layout/header.jsp" %>
+<%@ include file="/layout/footer.jsp" %>
 
 
-<html lang="ko">
-<head>
-<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-4RDYNH3QTJ&amp;l=dataLayer&amp;cx=c"></script>
-<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script src="https://connect.facebook.net/signals/config/2808577885918545?v=2.9.62&amp;r=stable" async=""></script>
-<script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
-<script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-W5TBQX4"></script>
-<script>
+<html lang="ko"><head>
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-4RDYNH3QTJ&amp;l=dataLayer&amp;cx=c"></script><script src="https://connect.facebook.net/signals/config/2808577885918545?v=2.9.64&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-W5TBQX4"></script><script>
 	if(self.location.protocol == "http:" && self.location.hostname.indexOf('mcdonalds.co.kr') != -1) {
     	self.location.href = self.location.href.replace('http',"https");
 	}
 </script>
+
+
 
 <!-- Google Tag Manager -->
 <script>
@@ -27,7 +24,7 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>맥도날드</title>
+	<title>맥드라이브</title>
 	<meta name="description" id="description" contents="메뉴, 레스토랑, 프로모션 등 안내">
 	<meta name="keywords" contents="McDonald's, McDrive, McDelivery, McMorning, Happy Meal, Signature Burger, McAllday, McCafe">
 	<link rel="shortcut icon" type="image/x-icon" href="https://www.mcdonalds.co.kr/kor/images/favicon.ico">
@@ -144,20 +141,23 @@
 <!-- End Google Tag Manager (noscript) -->
 
 	<div class="skipMenu"><a href="#container">본문 바로가기</a></div>
+	<!-- 
 	<div class="wrapper ">
-		<header class="header" style="margin-top: 0px;"><!-- 상단 고정 fixed 클래스 추가, 메뉴의 depth1 오버시 open 클래스 추가 -->
+	
+	
+		<header class="header">상단 고정 fixed 클래스 추가, 메뉴의 depth1 오버시 open 클래스 추가
 			
     
 
 
 
 	<div class="headArea">
-				<strong class="hLogo"><a href="/" class="logo" title="메인으로 이동"><img src="https://www.mcdonalds.co.kr/kor/images/common/logo.png" alt="맥도날드"></a></strong>
+				<strong class="hLogo"><a href="/" class="logo" title="메인으로 이동"><img src="/kor/images/common/logo.png" alt="맥도날드"></a></strong>
 				<nav class="hMenu">
 					<div class="menu">
 						<ul class="depth1">
-							<li><!-- li 오버시 on 클래스 추가 -->
-								<a href="javascript:gotoMenu(1);" class="dth1 ">Menu</a><!-- 현재페이지 메뉴에 current 클래스 추가 -->
+							<li>li 오버시 on 클래스 추가
+								<a href="javascript:gotoMenu(1);" class="dth1 ">Menu</a>현재페이지 메뉴에 current 클래스 추가
 								<ul class="depth2">
 									<li><a href="javascript:gotoMenu(1);" class="dth2">버거</a></li>
 									<li><a href="javascript:gotoMenu(14);" role="button">맥런치</a></li>
@@ -166,15 +166,15 @@
 									<li><a href="javascript:gotoMenu(7);" class="dth2">사이드 &amp; 디저트</a></li>
 									<li><a href="javascript:gotoMenu(9);" class="dth2">맥카페 &amp; 음료</a></li>
 									<li><a href="javascript:gotoMenu(5);" class="dth2">해피밀</a></li>
-									<!-- <li><a href="javascript:gotoMenu(11);" class="dth2">365일 즐거운 혜택</a></li> -->
+									<li><a href="javascript:gotoMenu(11);" class="dth2">365일 즐거운 혜택</a></li>
 								</ul>
 							</li>
 							<li>
-								<a href="/kor/store/main.do" class="dth1 ">Store</a>
+								<a href="/kor/store/main.do" class="dth1 current">Store</a>
 								<ul class="depth2">
 									<li><a href="/kor/store/main.do" class="dth2">매장찾기</a></li>
 									<li><a href="/kor/store/mcdelivery.do" class="dth2">맥딜리버리</a></li>
-									<li><a href="<%=contextPath %>/store/mcdrive.jsp" class="dth2">맥드라이브</a></li>
+									<li><a href="/kor/store/mcdrive.do" class="dth2">맥드라이브</a></li>
 									<li><a href="/kor/store/rental.do" class="dth2">임차문의</a></li>
 								</ul>
 							</li>
@@ -183,7 +183,7 @@
 								<ul class="depth2">
 									<li><a href="/kor/promotion/list.do" class="dth2">프로모션</a></li>
 									<li><a href="/kor/news/list.do" class="dth2">새로운 소식</a></li>
-									<!--  li><a href="/kor/kitchen.do" class="dth2">주방공개의 날</a></li -->
+									 li><a href="/kor/kitchen.do" class="dth2">주방공개의 날</a></li
 								    <li><a href="/kor/happymeal/list.do" class="dth2">이달의 해피밀</a></li> 
 								</ul>
 							</li>
@@ -198,13 +198,13 @@
 							</li>
 						</ul>
 					</div>
-					<!-- //menu -->
+					//menu
 					<form id="commonSearchForm" method="post">
 					<div class="util">
 						<a href="/kor/store/rental.do" class="renter" title="임차문의로 이동">임차문의</a>					
 						<a href="/kor/story/people/recruit.do" class="recruit" title="인재채용으로 이동">RECRUIT</a>
 						<a href="/eng/main.do" class="lang" title="영문사이트로 이동">ENG</a>
-						<div class="topSearch"><!-- 검색 활성화인 경우 open 클래스 추가 -->
+						<div class="topSearch">검색 활성화인 경우 open 클래스 추가
 							<button type="button" class="srch">검색 열기</button>
 							<fieldset class="srchField">
 								<legend>통합검색</legend>
@@ -217,7 +217,7 @@
 						</div>
 					</div>
 					</form>
-					<!-- //util -->
+					//util
 				</nav>
 			</div>
 		<form id="gotoMenuForm" method="post">
@@ -231,7 +231,7 @@
 			}
 			function gotoCommonSearch(){
 				if($.trim($("#commonSearchWord").val())==""){
-					alert("검색어를 입력해 주세요");
+					alert("검색어을 입력해 주세요");
 					$("#commonSearchWord").focus();
 				}else{
 					$("#commonSearchForm").attr("action","/kor/search.do");
@@ -240,359 +240,57 @@
 			}
 	</script>
 		</header>
-		<!-- //header -->
+		//header -->
+		
 		<div id="container">
 			<div class="content">
 				
-
-
-
-
-
-    
-
-
-
-		<h1 class="hide" data-desc="메인">Main</h1>
-		<!-- 
-			basicSwiper > swiper ul li li의 업데이트 업데이트 이후 아래 함수 실행
-			commonJs.swiperSetup( target ) 함수 실행 타겟은 $('#test1') 아이디나 클래스를 부여해 호출 클래스의 경우 중복인 경우는 순서에 맞춰서 호출해야 하기 때문에
-			id를 부여하거나 commonJs.swiperSetup( $('.class:eq(0)') ) , commonJs.swiperSetup( $('.class:eq(1)') )  개별 호출이 필요
-		 -->
-			
-		
-		<div class="mainEvent basicSwiper">
-			<c:if test="${ empty Blist }">
-			<h3>이미지가 없습니다.</h3>
-			</c:if>
-			
-			
-			<c:if test="${not empty Blist }">
-			
-			
-			
-			
-			
-			
-			
-			
-			<button type="button" class="ctrl prev" tabindex="0" role="button" aria-label="Previous slide">이전</button>
-			<div class="swiper swiper-container swiper-container-horizontal">
-				<ul class="swiper-wrapper" style="transform: translate3d(-5637px, 0px, 0px); transition-duration: 0ms;">
-				
-				
-				<li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="11" style="width: 1879px; visibility: hidden;"><a href="/kor/promotion/detail.do?page=1&amp;seq=320&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=0408_Strawberry"><img src="/upload/main/banner/1641377444960.png" alt="신선한 우유와 딸기의 진한 만남_1등급 원유 사용 베리 스트로베리 맥플러리, 스트로베리콘"></a></li>
-				
-				
-					
-					<%-- 	
-					<c:forEach items="${ Blist }" var="dtos" begin="0" end="0" >
-					<li class="swiper-slide" data-swiper-slide-index="0" style="width: 1879px; visibility: hidden;"><a href="https://www.mcdonalds.co.kr/kor/promotion/detail.do?seq=369&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=2022_McCrispy"><img src="${dtos.IMGVD_PATH}" alt="100% 통닭다리살 먹어봐야 아는 맛!"></a></li>
-					</c:forEach>
-	
-					
-					<c:forEach items="${ Blist }" var="dtos" begin="1" end="1" >
-					<li class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1" style="width: 1879px; visibility: hidden;"><a href="https://www.mcdonalds.co.kr/kor/promotion/detail.do?seq=374&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=2022_McCafe"><img src="${dtos.IMGVD_PATH}" alt="달콤한 아이스크림과 진~한 라떼의 만남!"></a></li>
-					</c:forEach>
-					 --%>
-					
-					
-					
-					<c:forEach items="${ Blist }" var="dtos" begin="2" end="4" >
-						
-					<li class="swiper-slide" data-swiper-slide-index="4" style="width: 1879px; visibility: hidden;"><a href="/kor/promotion/detail.do?seq=371&amp;utm_medium=pc_corp_site&amp;utm_source=Main_banner&amp;utm_campaign=2022_McWing"><img src="${ dtos.IMGVD_PATH }" alt="겉은 바삭 속은 쫄깃! 2022년 맥윙™ 출시!"></a></li>
-					
-					</c:forEach>
-				
-					
-				
-					
-						
-	   					    <!-- /* KV 비디오*/ -->
-							
-    
-
-
-
-
-					<!-- /* 2022.01.27 KV 비디오 추가 */ -->
-					<c:forEach items="${ Blist }" var="dtos" begin="0" end="0" >
-				    <li class="video swiper-slide swiper-slide-active" data-swiper-slide-index="2" style="width: 1879px; visibility: visible;">
-				   		<span>
-							<div class="video-box">
-								<video muted="" playsinline="" autoplay="" data-time="30000">
-									<source src="${dtos.IMGVD_PATH }" type="video/mp4">
-								</video>
-								<button type="button" class="sound off">Sound on</button>
-							</div>
-						</span>
-					</li>
-					</c:forEach>
-					<!-- /* 2022.01.27 KV 비디오 추가 끝 */ -->
-
-
-					 	
-						
-							
-    
-
-
-
-
-					<!-- /* 2022.01.27 KV 비디오 추가 */ -->
-					<c:forEach items="${ Blist }" var="dtos" begin="1" end="1" >
-				    <li class="video swiper-slide swiper-slide-next" data-swiper-slide-index="3" style="width: 1879px; visibility: hidden;">
-				   		<span>
-							<div class="video-box">
-								<video muted="" playsinline="" autoplay="" data-time="6000">
-									<source src="${dtos.IMGVD_PATH }" type="video/mp4">
-								</video>
-								<button type="button" class="sound off">Sound on</button>
-							</div>
-						</span>
-					</li>
-					</c:forEach>
-					<!-- /* 2022.01.27 KV 비디오 추가 끝 */ -->
-
-					
-					
-						
-					
-				<li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" style="width: 1879px; visibility: hidden;"><a href="https://www.mcdonalds.co.kr/kor/promotion/detail.do?seq=369&amp;utm_medium=Corp_site&amp;utm_source=Main_banner&amp;utm_campaign=2022_McCrispy"><img src="/upload/main/banner/1653467570689.png" alt="100% 통닭다리살 먹어봐야 아는 맛!"></a></li></ul>
-			
-			</c:if>
-			
-			
-			<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-		
-			<button type="button" class="ctrl next" tabindex="0" role="button" aria-label="Next slide">다음</button>
-			<div class="indicator">
-				<span role="text" class="timer"><span class="bar" style="width: 2.84205%; overflow: hidden;"></span></span>
-				<button type="button" class="play pause">정지</button><!-- 재생표시 <button type="button" class="play">재생</button> -->
-			</div>
-		</div>
-		
-		
-		
-		 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-			
-				<!-- //[3] -->
-				<div class="contArea mainCont">
+				<div class="visualArea bgStore01" data-title="맥드라이브" data-desc="맥드라이브">
 					<div class="inner">
-						<h2 class="titMain">McDonald's LIVE</h2>
-						<ul class="whatsNew" id="menuList">
-							<c:if test="${empty Plist }"><h3>데이터 없음</h3></c:if>
-							<c:if test="${not empty Plist }">
-								<c:forEach items="${Plist }" var="dto" begin="0" end="5">
-									<li>
-										<a href="#" onclick="goDetail(this)" data-seq="137" data="137,N,https://www.mcdonalds.co.kr/kor/promotion/detail.do?seq=369&amp;utm_medium=Corp_site&amp;utm_source=Main_cardblock&amp;utm_campaign=2022_McCrispy">
-											<div class="tmb">
-												<img src="${dto.IMGVD_PATH }" alt="${dto.p_title }">
-											</div>
-											<div class="con">
-												<strong class="tit" style="font-size:18px; font-weight:900; color:#292929;">${dto.p_title }</strong>
-											</div>
-										</a>
-									</li>
-								</c:forEach>
-							</c:if>
+						<h1 class="titDep1">맥드라이브</h1>
+						<ul class="navPath">
+							<li><a href="/kor/main.do">Home</a></li>
+							<li><a href="/kor/store/main.do">Store</a></li>
+							<li><a href="/kor/store/mcdrive.do">맥드라이브</a></li>
 						</ul>
-
-						<div class="btnMore" id="btnMore">
-							<a href="javascript:more();" class="more" title="더보기">더보기</a>
+					</div>
+				</div>
+				<!-- //visualArea -->
+				<div class="contArea">
+					<div class="inner">
+						<h2 class="titDep2">맥드라이브는 어떻게 이용하나요?</h2>
+						<p role="text" class="txtInfo">운전 중에도 24시간 간편하고 빠르게!<br> 차 안에서 주문하고, 차 안에서 바로 받아 맛있는 맥도날드를 즐겨보세요.</p>
+						<div class="driveVideo">
+						
+						<iframe title="주차보다 쉬운 맥드라이브!" width="100%" height="650px" src="https://www.youtube.com/embed/BiMkqfVNmnk?controls=1&amp;cc_lang_pref=ko&amp;cc_load_policy=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+						</div>
+						<!-- 
+						<h3 class="titDep3">차에서 내리지 않고 즐길 수 있는 맥드라이브!</h3>
+						<div class="stepFlow driveStep">
+							<img src="/kor/images/store/drive_step.gif" alt="주차보다 쉽게! 주차 고민하지 않아도,차에서 창문만 내리면 주문할 수 있어요. 주유보다 빠르게! 자리 잡을 고민 없이 차 안에서 주문하고 바로 받아 시간을 아낄 수 있어요. 차 안에서 맛있게! 주문과 동시에  갓 조리한 음식으로 따뜻하고 맛있게 즐기실 수 있어요.">
+						</div>
+						<!--<ul class="stepFlow driveStep">
+							<li class="s1"><span class="step">주차보다 쉽게!</span> 주차 고민하지 않아도, <br>차에서 창문만 내리면 주문할 수 있어요.</li>
+							<li class="s2"><span class="step">주유보다 빠르게!</span> 자리 잡을 고민 없이 차 안에서 주문하고 <br>바로 받아 시간을 아낄 수 있어요.</li>
+							<li class="s3"><span class="step">차 안에서 맛있게!</span> 주문과 동시에  갓 조리한 음식으로 <br>따뜻하고 맛있게 즐기실 수 있어요.</li>
+							<li class="s4"><span class="step">네번째, 깔끔세팅!</span> 피크닉이나 야외에서도 <br>먹기 편하게 세팅해 드립니다.</li>
+						</ul>-->
+						<!-- //수정 -->
+						<div class="btnArea">
+							<a href="/store/list.do;" class="btnMC btnL">맥드라이브 매장 검색하기</a>
 						</div>
 					</div>
 				</div>
-<!-- ------------------------------------------------------------------------------------------------------------------------------------------------- -->				
-				<form id="searchForm" name="searchForm" method="get">
-					<input type="hidden" name="seq" id="seq" value="137">
-					<input type="hidden" name="urlCode" id="urlCode" value="004002">
-					<input type="hidden" name="linkurl" id="linkurl" value="https://www.mcdonalds.co.kr/kor/promotion/detail.do?seq=369&amp;utm_medium=Corp_site&amp;utm_source=Main_cardblock&amp;utm_campaign=2022_McCrispy">
-				</form>		
-
-<!-- ajax 더보기 -->
-<!--  더보기 추가 220702 -->
- <script>
- $(function (){
-	 
-	
- 	
-     $("#btnMore").on("click", function(event) {
-        $.ajax({
-              
-              url:"prmtMore.jsp",   
-              dataType:"json",            
-               type:"GET",
-               cache:false,                     
-               success:function (data, textStatus, jqXHR){ 
-                 
-                  $( data.MoreData ).each( function ( i , elem ){
-                	  
-                 	 var adddiv =  "<li><a href='#'><div class='tmb'><img src='"+ elem.IMGVD_PATH +";'>"
-                 		 adddiv += "</div> <div class='con'> <strong class='tit' style='font-size:18px; font-weight:900; color:#292929;'>"+ elem.p_title +"</strong></div></a></li>";
-	
-                     $("#menuList").append( adddiv ) ;
-                  } ) ;
-                  
-               }, 
-               error:function (){
-                  alert("에러~~");
-               }
-           });
-     }) // click
- }); // ready
- 
- </script>
-<script type="text/javascript" src="/cert/js/KmcCert.js"></script>
-<script type="text/javascript">
-var init_page =0;
-var totalPage =0;
-var isCertificate = false;
-
-$(document).ready(function (){
-	daylock();
-	getList(1);	
-});
-/* function getList(page_val){
-	$.post("/kor/mainContent.do",
-			{	page:page_val },	
-			function(data){
-				if(data.is_ok=="ok"){
-					totalPage=data.totalPage;
-					init_page=data.page;
-					for(var i=0;i<data.list.length;i++){
-						$("#menuList").append(addList(data.list[i]));
-					}
-					if(page_val>1){
-						$("[data-seq='"+data.list[0].seq+"']").focus();
-					}
-					altEscapeTag();
-					if(totalPage==page_val){
-						$("#btnMore").hide();
-					}
-				}else{
-					alert("목록가져오기에 실패하였습니다\관리자에게 문의하세요");
-				}
-			}
-			
-	);
-	
-}
- */
-
-/*  */
-function daylock(){
-	 $("[data-daylock]").each(function(i,ob){
-		$(ob).on("click",function(e){
-			if($(this).prop("checked")){
-			 	var name = $(this).data("daylock");
-			 	var day = $(this).data("daylock-day");
-			 	if(day==undefined || day==null || day==null || isNaN(day) == true){
-			 		setCookie(name,"lock",7);
-				}else{
-					setCookie(name,"lock",day);
-				}
-			 	 commonJs.popup.image.hide( $("#popNoti") );
-			}
-		 });
-
-	 });
-}
-function addList(data){
-	if(data.content_type=="I")
-		return makeHtml("card1",data);
-	else
-		return makeHtml("card2",data);
-}
-function goEventLink(evient_seq){
-	$("#seq").val(evient_seq);
-	$("#searchForm").attr("action","/kor/promotion/detail.do");
-	$("#searchForm").submit();
-}
-
-
-function more(){
-	getList(init_page+1);
-}
-
-function removeVideo(){
-	var now = new Date();
-	var hours = now.getHours();
-	var minutes = now.getMinutes();
-
-	var start = Date.parse('2020-07-30 04:00:00') / 1000;
-	var end = Date.parse('2020-07-30 10:30:00') / 1000;
-	var now = Date.parse('2020-07-30 '+hours+':'+minutes+':00') / 1000;
-	
-	
-	if ((now >= start) && (now <= end)) {
-		$('.video').remove();
-	}
-	
-}
-
-function goDetail(element){
-	
-	var data = $(element).attr("data").split(",");
-	
-    var seq = data[0];	
-	var certification = data[1];
-	var linkurl = data[2];
-
-	var form_data = KmcCert.getUrlCode(seq,"json");
+			<form id="detailForm" method="post">
+				<input type="hidden" name="mcdrive_yn" value="Y">
+			</form>
 		
-	$("#seq").val(seq);
-	$("#linkurl").val(linkurl);
-	$("#urlCode").val(form_data["urlCode"]);
-		
-	if(certification !== "N" && isCertificate){
-		certification = 'N';
-	}
-	
-	if(certification !== "N"){
-    	var certPopup = window.open('about:blank','certviewer','width=846,height=700,scrollbars=no,resize=no');
-		certPopup.resizeTo(846,700);
-        $("#searchForm").attr("action", "/cert/popup.do");
-        $("#searchForm").attr("target", "certviewer");
-    	$("#searchForm").submit();
-	} else {
-		self.location.href=linkurl;
-	}
-
-}
-
-function certificate(){
-	isCertificate = true;
-	self.location.href = $("#linkurl").val();
-}
-
-</script>
-<script id="card1" type="text/templet">
-<li><a href="#" onclick="goDetail(this)" data-seq="{seq}" data="{seq},{certification},{pc_kor_link}">
-								<div class="tmb"><img src="{pc_kor_image_url}" alt="{pc_kor_alt}"></div>
-								<div class="con">
-									<strong class="tit">{pc_kor_content}</strong>
-								</div>
-							</a></li>
-</script>	
-<script id="card2" type="text/templet">
-<li class="official"><a href="#" onclick="goDetail(this)"  data-seq="{seq}" data="{seq},{certification},{pc_kor_link}">
-								<strong class="tit">{pc_kor_alt}</strong>
-								<span class="txt">{pc_kor_content}</span>
-							</a></li>
-</script>	
+				<script>
+				function go(){
+					$("#detailForm").attr("action","/kor/store/list.do");
+					$("#detailForm").submit();
+				}
+				</script>
 			</div>
 			<div class="aside">
 				<a href="/kor/story/competition/farmToRestaurant.do" class="go_story" title="품질 이야기로 이동">품질 이야기</a>
@@ -600,17 +298,19 @@ function certificate(){
 			</div>
 			<button type="button" class="btnTop">맨 위로 가기</button>
 		</div>
+		
 		<!-- //container -->
+		<!-- 
 		<footer class="footer">
 			
 			<div class="footArea">
 				<ul class="fUtil">
 					<li class="privacy"><a href="/kor/etc/private.do">개인정보 처리방침</a></li>
-					<li><a href="/kor/etc/location.do">위치정보 이용약관</a></li><!-- 추가 -->
+					<li><a href="/kor/etc/location.do">위치정보 이용약관</a></li>추가
 					<li><a href="/kor/etc/sitemap.do">사이트맵</a></li>
 					<li><a href="/kor/store/rental.do">임차문의</a></li>
 					<li><a href="https://voc.mcd.co.kr/MC/HOM/faqMain.jsp" target="_blank" title="새창 열림">고객문의</a></li>
-					<!-- <li><a href="javascript:systemCheck('https://voc.mcd.co.kr/MC/HOM/faqMain.jsp')" title="새창 열림">고객문의</a></li> -->					
+					<li><a href="javascript:systemCheck('https://voc.mcd.co.kr/MC/HOM/faqMain.jsp')" title="새창 열림">고객문의</a></li>					
 				    <li><a href="/kor/story/people/recruit.do">인재채용</a></li> 
 				</ul>
 				<ul class="fSns">
@@ -620,7 +320,7 @@ function certificate(){
 					<li><a href="https://story.kakao.com/ch/mcdonalds/feed" class="ks" target="_blank" title="새창 열림">맥도날드 카카오스토리</a></li>
 					<li class="web_accessibility">
                        <a href="http://www.webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110" class="web_accessibility" title="국가 공인 인증기관 : 웹와치" target="_blank">
-                        <img src="	https://www.mcdonalds.co.kr/kor/images/common/web_accessibility.png" alt="과학기술정보통신부 WA(WEB접근성) 품질인증 마크, 웹와치(WebWatch) 2022.1.6 ~ 2023.1.5" title="WA 품질인증 마크, 웹와치(WebWatch) 2022.1.6 ~ 2023.1.5">
+                        <img src="/kor/images/common/web_accessibility.png" alt="과학기술정보통신부 WA(WEB접근성) 품질인증 마크, 웹와치(WebWatch) 2022.1.6 ~ 2023.1.5" title="WA 품질인증 마크, 웹와치(WebWatch) 2022.1.6 ~ 2023.1.5">
                     </a>
                     </li> 
 				</ul>
@@ -635,10 +335,10 @@ function certificate(){
 				</div>
 			</div>	
 		</footer>
-		<!-- //footer -->
+		//footer
 	</div>
-	<!-- //wrapper -->
-	
+	//wrapper
+	 -->
 
 
 
