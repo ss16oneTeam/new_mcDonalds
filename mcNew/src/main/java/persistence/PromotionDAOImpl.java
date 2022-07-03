@@ -10,6 +10,7 @@ import java.util.List;
 import com.util.JdbcUtil;
 
 import domain.PromotionDTO;
+import domain.StoreLocDTO;
 
 public class PromotionDAOImpl implements PromotionDAO{
 	
@@ -96,6 +97,10 @@ public class PromotionDAOImpl implements PromotionDAO{
 
 	      return list;
 	}
+
+	
+	
+	
 
 
 }
