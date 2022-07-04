@@ -274,7 +274,8 @@ function Submit() {
  	$.ajax({
 		
 		
-		 url:"/store/mcDeliveryJson.do",  //모든 요청은 컨트롤러를 거친다
+//		 url:"/store/mcDeliveryJson.do",  //모든 요청은 컨트롤러를 거친다          XXXX
+		 url:"mcDeliveryJson.do",  //모든 요청은 컨트롤러를 거친다
          dataType:"json",
          type:"GET",
          cache:false,             

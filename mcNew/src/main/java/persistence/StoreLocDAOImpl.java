@@ -53,6 +53,7 @@ public class StoreLocDAOImpl implements StoreLocDAO {
          JdbcUtil.close(rs);         
       } // finally
 
+      //System.out.println("> dao.selectAddr() : " + list.size() );
       return list;
 	}
 	

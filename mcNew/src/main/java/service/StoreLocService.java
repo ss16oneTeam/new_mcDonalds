@@ -32,6 +32,8 @@ public class StoreLocService {
 	         
 	         Slist = dao.selectAddr(con);
 	         
+	        // System.out.println("> StoreLocService.selectAddr() : " + Slist.size() );
+	         
 	         return Slist;
 	         
 	      } catch (NamingException | SQLException e) { 

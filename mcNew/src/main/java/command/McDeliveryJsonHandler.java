@@ -18,6 +18,8 @@ public class McDeliveryJsonHandler implements CommandHandler {
 		
 		List<StoreLocDTO> Slist = storeLocService.selectAddr();
 		
+		// System.out.println("> McDeliveryJsonHandler.process() : " + Slist.size() );
+		
 		request.setAttribute("Slist", Slist);
 				
 		

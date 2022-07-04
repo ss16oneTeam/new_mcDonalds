@@ -18,7 +18,7 @@
     JSONObject jsonData = new JSONObject();
     JSONArray jsonStoreArray = new JSONArray();
 
-      List<StoreLocDTO> list = (List<StoreLocDTO>)request.getAttribute("SList");
+      List<StoreLocDTO> list = (List<StoreLocDTO>)request.getAttribute("Slist");
     
        Iterator<StoreLocDTO> ir = list.iterator();
         while (ir.hasNext()) {
