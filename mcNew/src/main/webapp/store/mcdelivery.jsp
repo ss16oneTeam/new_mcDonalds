@@ -225,27 +225,36 @@
 					</div>
 				</div>
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7d2849da01922567115797fadd6e5ca4&amp;libraries=services"></script><script charset="UTF-8" src="https://t1.daumcdn.net/mapjsapi/js/main/4.4.3/kakao.js"></script><script charset="UTF-8" src="https://t1.daumcdn.net/mapjsapi/js/libs/services/1.0.2/services.js"></script>
-<script type="text/javascript">
-function openApiPost(){
-	new daum.Postcode({
-    	oncomplete: function(data) {
-       		// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
-       		// 예제를 참고하여 다양한 활용법을 확인해 보세요.
-    		$("#addr1").val(data.address);
-       		
-    		var geocoder = new kakao.maps.services.Geocoder();
-    		geocoder.addressSearch(data.address, function(result, status) {
-    			 if (status === kakao.maps.services.Status.OK) {
-    				 $("#lat").val( result[0].y )
-    				 $("#lng").val( result[0].x );
-    			 } else {
-    				 alert("Error !!!")
-    			 }
-    		});
-    	}
-	}).open();
-}
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    function openApiPost() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                
+                $("#addr1").val(addr);
+                // document.getElementById('lat').value = data.zonecode;
+                // document.getElementById("addr1").value = addr;
+                // 커서를 상세주소 필드로 이동한다.
+                //document.getElementById("sample6_detailAddress").focus();
+            }
+        }).open();
+    }
+    
+
 
 function openApiPostcode(){
 	// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
@@ -262,12 +271,37 @@ function Submit() {
         return;
     }
 
-	$.ajax({
+ 	$.ajax({
+		
+		
+		 url:"/store/mcDeliveryJson.do",  //모든 요청은 컨트롤러를 거친다
+         dataType:"json",
+         type:"GET",
+         cache:false,             
+         success:function (data, textStatus, jqXHR){ 
+        	  
+        	  alert("와 된다~~~~~~~~");
+        	  
+             /* 
+             $( data.emp ).each( function ( i , elem ){
+                $("#demo").append( $("<li></li>").text( elem.empno +" / " + elem.ename ) );
+             } ) ;*/
+             
+          }, 
+          error:function(){
+             alert("에러ㅡㅡ");
+          } 
+		
+		 
+		
+		
+		
+		
 
-		crossDomain:true,
-		url : "/kor/store/mcdeliveryCheck.do",
+/*		crossDomain:true,
+		url : "/store/mcDeliveryJson.do",
         method : "GET",
-        data : { "address": encodeURI($("#addr1").val()),
+         data : { "address": encodeURI($("#addr1").val()),
 		     	 "lat"    : $("#lat").val(),
 			     "lng"    : $("#lng").val()
 		},
@@ -294,7 +328,7 @@ function Submit() {
                 if (obj.ResultCode == "-5000") {
                     alert("아파트의 경우 동, 호수를 입력하셔야 정확한 검색이 가능합니다");
                 } else {
-                	/*
+                	
                     if (obj.ResultCode == "-4002") {
                         sayu = "<br/>배달불가 (사유: 주소이상)"; // 주소이상
                     } else if (obj.ResultCode == "-4005") {
@@ -313,7 +347,7 @@ function Submit() {
                     $("#resultOk").hide();
                     $("#resultFail").html(comment);
                     $("#resultFail").show();
-                    */
+                    
                 	$("#default").hide();
                     $('#ok').parent('.rBox').removeClass('ok');
                     $('#ok').parent('.rBox').addClass('fail');
@@ -323,7 +357,7 @@ function Submit() {
                     
                 }
             } else if (deliveryOk == "Y") {
-            	/*
+            	
                 //alert($("#addr1").val() + "지역은 배달 가능지역 입니다.");
                 comment = "<div class='inner'><p><strong>"+addr_str+"</strong> 는(은) 배달가능지역입니다.<br/>전화 또는 온라인으로 주문할 수 있습니다.</p>"
                              + "<!--<a href='https://www.mcdelivery.co.kr/kr/' target='_blank'>온라인 주문하기</a>--></div>";
@@ -331,7 +365,7 @@ function Submit() {
                 $("#resultFail").hide();
                 $("#resultOk").html(comment);
                 $("#resultOk").show();
-            	*/
+            	
             	$("#default").hide();
             	$('#ok').parent('.rBox').addClass('ok');
             	$('#ok').parent('.rBox').removeClass('fail');
@@ -349,7 +383,7 @@ function Submit() {
                 alert("오류가 발생했습니다.");
                 return false;
             }
-        }
+        } */
     });
     return;
 }
