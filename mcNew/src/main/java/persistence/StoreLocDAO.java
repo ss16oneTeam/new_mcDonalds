@@ -10,5 +10,6 @@ public interface StoreLocDAO {
 
 	List<StoreLocDTO> selectAddr(Connection con) throws SQLException;
 	
+	List<StoreLocDTO> selectEvent(Connection con) throws SQLException;
 	
 }
