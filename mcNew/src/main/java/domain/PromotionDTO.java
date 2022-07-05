@@ -5,21 +5,30 @@ public class PromotionDTO {
 	private String p_title;
 	private String IMGVD_PATH;
 	private String p_code;
+	private int a;
 	
 	public PromotionDTO() {
 		super();
 		
 	}
 
-
-	public PromotionDTO(String p_title, String iMGVD_PATH, String p_code) {
+	public PromotionDTO(String p_title, String iMGVD_PATH, String p_code,int a) {
 		super();
 		this.p_title = p_title;
 		IMGVD_PATH = iMGVD_PATH;
 		this.p_code = p_code;
+		this.a=a;
 	}
 	
-	
+
+	public int getA() {
+		return a;
+	}
+
+	public void setA(int a) {
+		this.a = a;
+	}
+
 	public String getP_title() {
 		return p_title;
 	}

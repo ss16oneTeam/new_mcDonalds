@@ -221,26 +221,28 @@
 					<!-- //util -->
 				</nav>
 			</div>
-		<form id="gotoMenuForm" method="post">
-		<input type="hidden" name="sub_category_seq" id="gotoform_sub_category_seq">
-		</form>
-	<script>
-			function gotoMenu(val){
-				$("#gotoform_sub_category_seq").val(val);
-				$("#gotoMenuForm").attr("action","/kor/menu/list.do");
-				$("#gotoMenuForm").submit();
-			}
-			function gotoCommonSearch(){
-				if($.trim($("#commonSearchWord").val())==""){
-					alert("검색어를 입력해 주세요");
-					$("#commonSearchWord").focus();
-				}else{
-					$("#commonSearchForm").attr("action","/kor/search.do");
-					$("#commonSearchForm").submit();
+				<form id="gotoMenuForm" method="post">
+					<input type="hidden" name="sub_category_seq" id="gotoform_sub_category_seq">
+				</form>
+			<script>
+				function gotoMenu(val){
+					$("#gotoform_sub_category_seq").val(val);
+					$("#gotoMenuForm").attr("action","list.do");
+					$("#gotoMenuForm").submit();
 				}
-			}
-	</script>
+						
+				function gotoCommonSearch(){
+					if($.trim($("#commonSearchWord").val())==""){
+						alert("검색어을 입력해 주세요");
+						$("#commonSearchWord").focus();
+					}else{
+						$("#commonSearchForm").attr("action","/kor/search.do");
+						$("#commonSearchForm").submit();
+					}
+				}
+			</script>
 		</header>
+		
 		<!-- //header -->
 		<div id="container">
 			<div class="content">

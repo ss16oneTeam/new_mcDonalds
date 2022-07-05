@@ -220,7 +220,8 @@
 					<!-- //util -->
 				</nav>
 			</div>
-		<form id="gotoMenuForm" method="post">
+			--%>
+	<!-- 	<form id="gotoMenuForm" method="post">
 		<input type="hidden" name="sub_category_seq" id="gotoform_sub_category_seq">
 		</form>
 	<script>
@@ -238,10 +239,10 @@
 					$("#commonSearchForm").submit();
 				}
 			}
-	</script>
+	</script> -->
 		</header>
 		<!-- //header -->
-		 --%>
+		 
 		
 		
 		<div id="container">
@@ -392,32 +393,35 @@
 		
 			
 				<!-- //[3] -->
-				<div class="contArea mainCont">
-					<div class="inner">
-						<h2 class="titMain">McDonald's LIVE</h2>
-						<ul class="whatsNew" id="menuList">
-							<c:if test="${empty Plist }"><h3>데이터 없음</h3></c:if>
-							<c:if test="${not empty Plist }">
-								<c:forEach items="${Plist }" var="dto" begin="0" end="5">
-									<li>
-										<a href="#" onclick="goDetail(this)" data-seq="137" data="137,N,https://www.mcdonalds.co.kr/kor/promotion/detail.do?seq=369&amp;utm_medium=Corp_site&amp;utm_source=Main_cardblock&amp;utm_campaign=2022_McCrispy">
-											<div class="tmb">
-												<img src="${dto.IMGVD_PATH }" alt="${dto.p_title }">
-											</div>
-											<div class="con">
-												<strong class="tit" style="font-size:18px; font-weight:900; color:#292929;">${dto.p_title }</strong>
-											</div>
-										</a>
-									</li>
-								</c:forEach>
-							</c:if>
-						</ul>
-
-						<div class="btnMore" id="btnMore">
-							<a href="javascript:more();" class="more" title="더보기">더보기</a>
-						</div>
+			<div class="contArea mainCont" id="getPromotion">
+				<div class="inner">
+					<h2 class="titMain">McDonald's LIVE</h2>
+					<ul class="whatsNew" id="menuList">
+						<c:if test="${empty Plist }"><h3>데이터 없음</h3></c:if>
+						<c:if test="${not empty Plist }">
+							<c:forEach items="${Plist }" var="dto"  varStatus="status">
+								<li >
+									<a href="#" onclick="goDetail(this)" data-seq="137" data="${status.count}"  id="${ dto.a }">
+										<div class="tmb">
+											<img src="${dto.IMGVD_PATH }" alt="${dto.p_title }" >
+										</div>
+										<div class="con">
+											<strong class="tit" style="font-size:18px; font-weight:900; color:#292929;">${dto.p_title }</strong>
+										</div>
+									</a>
+								</li>
+								<c:if test="${ status.last }">
+									<c:set var="lastno" value="${ dto.a }"></c:set>
+								</c:if>
+							</c:forEach>
+						</c:if>
+					</ul>
+						
+					<div class="btnMore" id="btnMore">
+						<a href="javascript:getList();" class="more" title="더보기">더보기</a>
 					</div>
 				</div>
+			</div>
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------- -->				
 				<form id="searchForm" name="searchForm" method="get">
 					<input type="hidden" name="seq" id="seq" value="137">
@@ -426,38 +430,37 @@
 				</form>		
 
 <!-- ajax 더보기 -->
-<!--  더보기 추가 220702 -->
- <script>
- $(function (){
-	 
-	
- 	
-     $("#btnMore").on("click", function(event) {
-        $.ajax({
-              
-              url:"prmtMore.jsp",   
-              dataType:"json",            
-               type:"GET",
-               cache:false,                     
-               success:function (data, textStatus, jqXHR){ 
+<!--  더보기 추가 2200705 -->
+
+<script>
+	$(function (){
+		var lastno =  '${ Plist.size() }';
+		$("#btnMore").on("click", function(event) {
+			var params= "lastno=" + lastno; 
+			$.ajax({
+				url:"Pmore.do",   
+				dataType:"json",            
+				type:"GET",
+				data:params,
+				cache:false,                     
+				success:function (data, textStatus, jqXHR){ 
                  
-                  $( data.MoreData ).each( function ( i , elem ){
-                	  
-                 	 var adddiv =  "<li><a href='#'><div class='tmb'><img src='"+ elem.IMGVD_PATH +";'>"
-                 		 adddiv += "</div> <div class='con'> <strong class='tit' style='font-size:18px; font-weight:900; color:#292929;'>"+ elem.p_title +"</strong></div></a></li>";
-	
-                     $("#menuList").append( adddiv ) ;
-                  } ) ;
-                  
-               }, 
-               error:function (){
-                  alert("에러~~");
-               }
-           });
-     }) // click
- }); // ready
+					$( data.list ).each( function ( i , elem ){
+						var adddiv =  "<li><a href='#' id='"+elem.a+";'><div class='tmb'><img src='"+ elem.IMGVD_PATH +";'>"
+							adddiv += "</div> <div class='con'> <strong class='tit' style='font-size:18px; font-weight:900; color:#292929;'>"+ elem.p_title +"</strong></div></a></li>";
+                       
+						lastno=elem.a;
+						$("#menuList").append( adddiv ) ;
+					} ) ;
+				}, 
+				error:function (){
+					alert("에러~~");
+				}
+			});
+		}) // click
+	}); // ready
  
- </script>
+</script>
 <script type="text/javascript" src="/cert/js/KmcCert.js"></script>
 <script type="text/javascript">
 var init_page =0;
