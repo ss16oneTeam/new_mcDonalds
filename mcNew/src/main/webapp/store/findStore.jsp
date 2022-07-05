@@ -289,11 +289,15 @@
 							<li><a href="/kor/store/main.do" role="button" aria-selected="true">지역별</a></li>
 							<li><a href="<%=contextPath %>/store/event.do" role="button">이벤트매장</a></li>
 						</ul>
+						
+						<!-- ******************************************** -->
 						<form id="searchForm" method="post">
 							<input type="hidden" name="page" id="page" value="1">
 							<input type="hidden" name="lat" id="lat" value="NO">
 							<input type="hidden" name="lng" id="lng" value="NO">
 							<input type="hidden" name="search_options" id="search_options" value="">
+						<!-- ******************************************** -->	
+							
 						<!-- 20191112 수정 yjs -->
 						
 						
@@ -418,7 +422,7 @@
 					</div>
 				</div>
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7d2849da01922567115797fadd6e5ca4"></script><script charset="UTF-8" src="https://t1.daumcdn.net/mapjsapi/js/main/4.4.3/kakao.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cbe3aa927e8fe820a20d5727638529c3"></script><script charset="UTF-8" src="https://t1.daumcdn.net/mapjsapi/js/main/4.4.3/kakao.js"></script>
 <!--시작 ------------------------------------------------------------------------------- -->
 <script type="text/javascript">
 $(document).ready(function () {
@@ -488,7 +492,7 @@ var mapContainer = document.getElementById('map'),
 	    var imageSize = new daum.maps.Size(54, 70); 
 	    
 	    // 마커 이미지를 생성합니다    
-	    var markerImage = new daum.maps.MarkerImage("/kor/images/store/ico_marker.png", imageSize); 
+	    var markerImage = new daum.maps.MarkerImage("https://www.mcdonalds.co.kr/kor/images/store/ico_marker.png", imageSize); 
 	    
 	    // 마커를 생성합니다
 	    var marker = new daum.maps.Marker({
@@ -558,26 +562,31 @@ function locate(){
 	}
 	
 }
-
+/* ----------------------------------------------------------------------------- */
 function search(){
 	$("#page").val(1);
 	$("#lat").val("NO");
 	$("#lng").val("NO");
 	go();
+	
+	
 }
+/* ----------------------------------------------------------------------------- */
 function page(page){
 	$("#page").val(page);
 	go();
 }
+/* ----------------------------------------------------------------------------- */
 function go(){
     var search_options= [];
     $('.storeFind .srvcFilter .service>span input:checked').each(function(index, item){
     	search_options[index] = this.id;
     });
 	$("#search_options").val(search_options.join(","));
-	$("#searchForm").attr("action","/kor/store/list.do");
+	$("#searchForm").attr("action","<%=contextPath%>/store/list.do");
 	$("#searchForm").submit();
 }
+/* ----------------------------------------------------------------------------- */
 function gohttps(){
 	$("#searchForm").attr("action","https://www.mcdonalds.co.kr/kor/store/list.do");
 	$("#searchForm").submit();

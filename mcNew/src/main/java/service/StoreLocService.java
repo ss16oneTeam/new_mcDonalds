@@ -66,4 +66,26 @@ public class StoreLocService {
 	}//
 	
 	
+	public List<StoreLocDTO> selectStore() {
+		Connection con = null;
+		try {
+			con = ConnectionProvider.getConnection();
+			StoreLocDAOImpl dao = StoreLocDAOImpl.getInstance();
+			List<StoreLocDTO> Sslist = null;
+			
+			Sslist = dao.selectStore(con);
+			
+			// System.out.println("> StoreLocService.selectAddr() : " + Slist.size() );
+			
+			return Sslist;
+			
+		} catch (NamingException | SQLException e) { 
+			System.out.println("서비스 오류확인");
+			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(con);
+		}
+	}
+	
+	
 }

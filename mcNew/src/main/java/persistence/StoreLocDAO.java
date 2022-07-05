@@ -12,4 +12,8 @@ public interface StoreLocDAO {
 	
 	List<StoreLocDTO> selectEvent(Connection con) throws SQLException;
 	
+	List<StoreLocDTO> selectStore(Connection con) throws SQLException;
+	
+	
+	
 }
