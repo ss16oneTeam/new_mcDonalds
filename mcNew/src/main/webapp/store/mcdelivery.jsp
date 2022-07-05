@@ -273,70 +273,21 @@ function Submit() {
 
  	$.ajax({
 		
-		
-//		 url:"/store/mcDeliveryJson.do",  //모든 요청은 컨트롤러를 거친다          XXXX
 		 url:"mcDeliveryJson.do",  //모든 요청은 컨트롤러를 거친다
          dataType:"json",
          type:"GET",
          cache:false,             
          success:function (store, textStatus, jqXHR){ 
-        	  
-        	  // alert("와 된다~~~~~~~~");
 
-        	  var addr = store.store[0].s_addr;				// 서울특별시 강남구 테헤란로 107 메디타워 2층 (역삼동)
-       
-        	  alert(addr);
-        	  
-        	  alert(store.store.length);                    // 23
-        	  
-        	  /* ------------------------------------------------------------ */
+        	  var test = '';
+        	  for (var i = 0; i <store.store.length; i++) {
+        		  test = test.concat(store.store[i].s_addr)
+        	  };
 
-        	  
-        	  console.log(store)
-        	  
-        	  var test = (store.store[0].s_addr).concat(store.store[1].s_addr
-        			  									, store.store[2].s_addr
-        			  									, store.store[3].s_addr
-        			  									, store.store[4].s_addr
-        			  									, store.store[5].s_addr
-        			  									, store.store[6].s_addr
-        			  									, store.store[7].s_addr
-        			  									, store.store[8].s_addr
-        			  									, store.store[9].s_addr
-        			  									, store.store[10].s_addr
-        			  									, store.store[11].s_addr
-        			  									, store.store[12].s_addr
-        			  									, store.store[13].s_addr
-        			  									, store.store[14].s_addr
-        			  									, store.store[15].s_addr
-        			  									, store.store[16].s_addr
-        			  									, store.store[17].s_addr
-        			  									, store.store[18].s_addr
-        			  									, store.store[19].s_addr
-        			  									, store.store[20].s_addr
-        			  									, store.store[21].s_addr
-        			  									, store.store[22].s_addr
-        			  									);
-        	 
-        	  
-        	  alert(test);											// 배열 다 합친거
-        	  
- 
         	  var addrArray = test.split(" ");						// 다 합친 배열 잘라서 다시 배열에 담기
-              alert(addrArray);								
 
-              
               var split = $("#addr1").val().split(" ");
-              
-              alert(split[2]);										// 강남으로 검색 후 아무거나 클릭했을 때의 값 : 강남구
-              
-              if(addrArray.includes(split[2])){				
-            	  alert("맞아!");									// 강남으로 검색했을 때 배열이 강남구를 포함하므로 맞아! 출력
-              }else{		
-            	  alert("아니야!");
-              }
-        	    
-              
+
               if(addrArray.includes(split[2])){						// 포함하는 경우
             	  
             	  $("#default").hide();
@@ -356,8 +307,7 @@ function Submit() {
                  $("#fail > a").focus();
             	  
               }
-
-              
+          
           }, 
           error:function(){
              alert("에러ㅡㅡ");
