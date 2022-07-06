@@ -1544,6 +1544,8 @@
 
          // If field is not empty, ajax validation
            // error.hide();
+         
+      /*---------------------------------------------------------------------------------------------------------------  */
            $.ajax('/kr/login/authenticate.json', {
                data: {
                   Username : usernameVal,
@@ -1569,7 +1571,7 @@
            });
       }
    });
-   
+   /*----------------------------------------------------------------------------------------------------------  */
    var isTrackOrderLogin = false;
    $(".track-order-flag").click(function(event){
        isTrackOrderLogin = true;
