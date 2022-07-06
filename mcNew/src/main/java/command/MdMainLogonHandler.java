@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import domain.MemberDTO;
 import domain.PromotionDTO;
@@ -28,16 +29,17 @@ public class MdMainLogonHandler implements CommandHandler{
 		
 		MemberDTO memberDTO = memberService.loginMember(userId,userPwd);
 		 
-		
-		
-		request.setAttribute("Member", memberDTO);
-		
-		System.out.println(">memberDTO 갯수"+memberDTO.getAdr_code());
-		 
-		
-		return "/md/mdmain.jsp";
+		if(memberDTO == null) {
+			System.out.println(">회원 없음 상황 발생");
+			return "/mcNew/md/mdmain.do?logIn=error";
+		}else {
+			System.out.println(">회원 있음 상황 발생");
+			System.out.println(">memberDTO 갯수"+memberDTO.getAdr_code());
+			HttpSession session = request.getSession(true);
+			session.setAttribute("Member", memberDTO);
+			return "/mcNew/md/mdmain.do";
+		}
 
 	}
-
 
 }

@@ -33,15 +33,17 @@ public class MemberService {
 			con = ConnectionProvider.getConnection();
 			MemberDAOImpl dao =MemberDAOImpl.getInstance();
 			MemberDTO dto = null;
+			MemberDTO dtoCheck = null;
 			
+			dtoCheck = dao.loginCheck(con, userId, userPwd);
 			
-			
-			
-			
-			
-			
-			dto = dao.login(con, userId, userPwd);
-			return dto;
+			if(dtoCheck.getCheck()==0) {//판별해서 0나오면 그냥 dto 널값 반환
+				return dto;
+				
+			}else {
+				dto = dao.login(con, userId, userPwd);
+				return dto;
+			}
 
 		} catch (NamingException | SQLException e) { 
 			//e.printStackTrace(); 

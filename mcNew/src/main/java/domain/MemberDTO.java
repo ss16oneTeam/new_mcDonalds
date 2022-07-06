@@ -9,14 +9,19 @@ public class MemberDTO {
    private String mem_tel;
    private String mem_lan;
    private String adr_code;
+   private int check;
 
-   public MemberDTO() {
+   
+   
+
+
+public MemberDTO() {
       super();
    }
    
    
    public MemberDTO(String mem_code, String mem_id, String mem_pw, String mem_gender, String mem_name, String mem_tel,
-         String mem_lan, String adr_code) {
+         String mem_lan, String adr_code, int check) {
       super();
       this.mem_code = mem_code;
       this.mem_id = mem_id;
@@ -26,8 +31,17 @@ public class MemberDTO {
       this.mem_tel = mem_tel;
       this.mem_lan = mem_lan;
       this.adr_code = adr_code;
+      this.check = check;
    }
 
+   public int getCheck() {
+	   return check;
+   }
+   
+   
+   public void setCheck(int check) {
+	   this.check = check;
+   }
    public String getMem_code() {
       return mem_code;
    }
@@ -76,12 +90,15 @@ public class MemberDTO {
    public void setAdr_code(String adr_code) {
       this.adr_code = adr_code;
    }
-   @Override
-   public String toString() {
-      return "MemberDTO [mem_code=" + mem_code + ", mem_id=" + mem_id + ", mem_pw=" + mem_pw + ", mem_gender="
-            + mem_gender + ", mem_name=" + mem_name + ", mem_tel=" + mem_tel + ", mem_lan=" + mem_lan
-            + ", adr_code=" + adr_code + "]";
-   }
 
+
+@Override
+public String toString() {
+	return "MemberDTO [mem_code=" + mem_code + ", mem_id=" + mem_id + ", mem_pw=" + mem_pw + ", mem_gender="
+			+ mem_gender + ", mem_name=" + mem_name + ", mem_tel=" + mem_tel + ", mem_lan=" + mem_lan + ", adr_code="
+			+ adr_code + ", check=" + check + "]";
+}
+  
+   
    
 }

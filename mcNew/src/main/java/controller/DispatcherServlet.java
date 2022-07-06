@@ -17,13 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 import command.CommandHandler;
 
 
-
-
-
-
-
-
-
 public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -125,7 +118,40 @@ public class DispatcherServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request,response);
+		System.out.println("post서블릿호출");
+		//1. 요청 url분석  (모든 요청들을 분석)  list.do 요청이 왔다면 -> Command~.properties로 가서 ListHandler가 일을 한다고 하고 -> new ListHandler() 객체 생성 로직처리
+		String requestURI = request.getRequestURI(); //   /jspPro/board/list.do
+		//request.getRequestURL(); //경로 절대경로 다
+		
+		//requestURI 컨텍스트 패스 제거
+		String contextPath= request.getContextPath();
+		
+		if(requestURI.indexOf(contextPath)==0) {
+			
+			requestURI=requestURI.substring(contextPath.length()); //  /board/list.do만 가져옴 (key)
+		}
+		///board/list.do는 키값으로 사용
+		
+		//2. 요청 url -> 로직을 처리하는 모델객체 (커맨드 핸들러)를 찾는 작업 + 처리해라 + 처리결과를 받고 request.setAttribute()로 또는 세션에 저장한다면
+		CommandHandler modelHandler =    this.commandHandlerMap.get(requestURI ); //get에 key값을 주면 value를 구할 수 있음
+		//value=get(key) -> 인터페이스 upcasting 해서 list,edit등등 핸들러를 받아옴다.
+		String viewPage=null;
+		try {
+			viewPage = modelHandler.process(request, response); //ex) 리스트 핸들러의 프로세스를 받아와서 실행시킨다
+		} catch (Exception e) {
+		
+			e.printStackTrace();
+		}
+		
+		
+		//3. 뷰페이지 받아서 리다이렉트 시키는 경우
+		
+		if(viewPage!=null) {
+			response.sendRedirect(viewPage);
+		}
+		
+		
+		
 	}//dopost
 
 }

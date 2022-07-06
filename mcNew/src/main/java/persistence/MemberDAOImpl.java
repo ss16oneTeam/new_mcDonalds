@@ -24,7 +24,9 @@ public class MemberDAOImpl implements MemberDAO{
 	public MemberDTO login(Connection conn, String userId, String userPwd) throws SQLException {
 		System.out.println(" login()- lmpl시작");
 
-		String sql = "select * from member where mem_id=? and mem_pw=? ";
+		String sql = "select mem_code, mem_id, mem_pw, mem_gender, mem_name, mem_tel, mem_lan, ad.adr_main "
+				+ "from member m LEFT JOIN mem_adr ad ON(m.adr_code = ad.adr_code) "
+				+ "where m.mem_id= ? and m.mem_pw= ? ";
 		System.out.println(userId);
 		System.out.println(userPwd);
 		MemberDTO dto = null;
@@ -44,7 +46,41 @@ public class MemberDAOImpl implements MemberDAO{
 					dto.setMem_name(rs.getString("mem_name"));
 					dto.setMem_tel(rs.getString("mem_tel"));
 					dto.setMem_lan(rs.getString("mem_lan"));
-					dto.setAdr_code(rs.getString("adr_code"));
+					dto.setAdr_code(rs.getString("adr_main"));
+					System.out.println(dto.toString());
+
+				} while ( rs.next() );
+			} // 
+		} finally {
+			JdbcUtil.close(pstmt);
+			JdbcUtil.close(rs);         
+		} // finally
+		System.out.println(dto);
+		return dto;
+	}
+
+	@Override
+	public MemberDTO loginCheck(Connection conn, String userId, String userPwd) throws SQLException {
+		System.out.println(" loginCheck()- lmpl시작");
+
+		String sql = "select count(*)	"
+					+ "FROM MEMBER	"
+					+ "WHERE MEM_ID = ? AND MEM_PW = ? ";
+		System.out.println(userId);
+		System.out.println(userPwd);
+		MemberDTO dto = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1,  userId);
+			pstmt.setString(2,  userPwd);
+			rs = pstmt.executeQuery();
+			if ( rs.next() ) {
+				System.out.println("sql 세강문 찍히나?");
+				do {
+					dto = new MemberDTO();             
+					dto.setCheck(rs.getInt(1));
+					//의심 부분 1
 					System.out.println(dto.toString());
 
 				} while ( rs.next() );
