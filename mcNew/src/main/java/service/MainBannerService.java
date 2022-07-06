@@ -16,36 +16,36 @@ import persistence.PromotionDAOImpl;
 public class MainBannerService {
 
 	private MainBannerService() {}
-	 private static MainBannerService instance = null;  
+	private static MainBannerService instance = null;  
 
-	   public static MainBannerService getInstance() {
+	public static MainBannerService getInstance() {
 
-	      if(instance == null) {
-	         instance = new MainBannerService();
-	      }
-	      
-	      return instance;
-	   }
-	   
- public List<PromotionDTO> selectImg(){
-		   
-		   Connection con = null;
-		   try {
-		         con = ConnectionProvider.getConnection();
-		         PromotionDAOImpl dao = PromotionDAOImpl.getInstance();
-		         List<PromotionDTO> list = null;
-		         
-		         list = dao.selectImg(con);
-		         
-		         return list;
-		      } catch (NamingException | SQLException e) { 
-		         throw new RuntimeException(e);
-		      } finally {
-		         JdbcUtil.close(con);
-		      }
-		   }
-		   
-	   }
-	   
-	
+		if(instance == null) {
+			instance = new MainBannerService();
+		}
+
+		return instance;
+	}
+
+	public List<PromotionDTO> selectImg(){
+
+		Connection con = null;
+		try {
+			con = ConnectionProvider.getConnection();
+			PromotionDAOImpl dao = PromotionDAOImpl.getInstance();
+			List<PromotionDTO> list = null;
+
+			list = dao.selectImg(con);
+
+			return list;
+		} catch (NamingException | SQLException e) { 
+			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(con);
+		}
+	}
+
+}
+
+
 

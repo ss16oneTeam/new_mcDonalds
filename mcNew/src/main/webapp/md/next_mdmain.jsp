@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -474,10 +473,10 @@
 								<form name="form_select_address" id="form_select_delivery_address" method="post" accept-charset="utf-8" role="form" class="panel-home-masthead-form" action="/kr/home.html">
 									<div class="form-group">
 										<label for="form_select_address_delivery_address" class="control-label">다음의 주소로 배달됩니다:</label>
-										 <select class="address-picker hide-default-error" name="address" id="form_select_address_delivery_address" tabindex="0" style="display: none;" aria-disabled="false">
+										<!--  <select class="address-picker hide-default-error" name="address" id="form_select_address_delivery_address" tabindex="0" style="display: none;" aria-disabled="false">
 											<option selected="selected" value="1">서울특별시 용산구 갈월동 14-6 남산하컴빌 502호</option>
-										</select> 
-										<!-- <span class="address-picker hide-default-error"><a class="ui-selectmenu ui-widget ui-state-default ui-corner-all ui-selectmenu-dropdown" id="form_select_address_delivery_address-button" role="button" href="#nogo" tabindex="0" aria-haspopup="true" aria-owns="form_select_address_delivery_address-menu" aria-disabled="false" style="width: 288px;"><span class="ui-selectmenu-status">서울특별시 용산구 갈월동 14-6 남산하컴빌 502호</span><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span></a></span> -->
+										</select>  -->
+										<span class="address-picker hide-default-error"><a class="ui-selectmenu ui-widget ui-state-default ui-corner-all ui-selectmenu-dropdown" id="form_select_address_delivery_address-button" role="button" href="#nogo" tabindex="0" aria-haspopup="true" aria-owns="form_select_address_delivery_address-menu" aria-disabled="false" style="width: 288px;"><span class="ui-selectmenu-status">서울특별시 용산구 갈월동 14-6 남산하컴빌 502호</span><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span></a></span>
 										<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 										
 											<a class="action-secondary action-link action-addaddress" href="/kr/address.html"><i class="fa fa-caret-right"></i> 주소 추가하기</a>

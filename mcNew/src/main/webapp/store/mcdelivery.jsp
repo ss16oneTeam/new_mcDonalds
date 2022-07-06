@@ -199,7 +199,7 @@
 						<div class="btnArea mcdelivery">
 							<div class="appDown">
 							    <div>
-									<a href="https://www.mcdelivery.co.kr/kr/" class="btnMC btnL action" target="_blank" title="새창 열림">맥딜리버리 온라인 주문하기</a>
+									<a href="<%=contextPath %>/md/mdmain.do" class="btnMC btnL action" target="_blank" title="새창 열림">맥딜리버리 온라인 주문하기</a>
 								</div>
 
 							

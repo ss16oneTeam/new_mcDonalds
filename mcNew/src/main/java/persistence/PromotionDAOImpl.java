@@ -15,7 +15,7 @@ import domain.StoreLocDTO;
 public class PromotionDAOImpl implements PromotionDAO{
 	
 	private PromotionDAOImpl() {}
-	 private static PromotionDAOImpl instance = new PromotionDAOImpl();
+	private static PromotionDAOImpl instance = new PromotionDAOImpl();
 	public static PromotionDAOImpl getInstance() {
 		return instance;
 	}
