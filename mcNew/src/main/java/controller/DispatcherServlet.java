@@ -147,7 +147,8 @@ public class DispatcherServlet extends HttpServlet {
 		//3. 뷰페이지 받아서 리다이렉트 시키는 경우
 		
 		if(viewPage!=null) {
-			response.sendRedirect(viewPage);
+			RequestDispatcher dispatcher =request.getRequestDispatcher(viewPage);
+			dispatcher.forward(request, response);
 		}
 		
 		
