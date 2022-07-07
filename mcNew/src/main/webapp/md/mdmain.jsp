@@ -421,10 +421,9 @@
                         
                         
                      
-               
-            <a class="slide-target slide-item action-ordernow cycle-slide" onclick="onPromoClick({ 'id':'10887','name':'소프트번','creative':'banner' + '1','position':'homepage'})" style="background-image: url(&quot;https://www.mcdelivery.co.kr/kr//static/1656543919591/assets/82/banners/landing_67961_WOS.jpg?&quot;); position: absolute; top: 0px; left: 0px; z-index: 100; opacity: 0; display: none;">
-                                 </a><a class="slide-target slide-item action-ordernow cycle-slide cycle-slide-active" onclick="onPromoClick({ 'id':'10909','name':'레몬 맥피즈(BF)','creative':'banner' + '2','position':'homepage'})" style="background-image: url(&quot;https://www.mcdelivery.co.kr/kr//static/1656543919591/assets/82/banners/landing_68320_WOS.jpg?WOS&quot;); position: absolute; top: 0px; left: 0px; z-index: 99; display: block; opacity: 1;" alt="WOS">
-                                 </a></div> 
+            <c:forEach items="${MdList}" var="dtom">   
+            <a class="slide-target slide-item action-ordernow cycle-slide cycle-slide-active" onclick="onPromoClick({ 'id':'10909','name':'레몬 맥피즈(BF)','creative':'banner' + '2','position':'homepage'})" style="background-image: url('${dtom.IMGVD_PATH}'); position: absolute; top: 0px; left: 0px; z-index: 99; display: block; opacity: 1;" alt="WOS">
+                                 </a></c:forEach></div> 
          
          
             
@@ -467,7 +466,7 @@
                                  <label class="sr-only" for="form_login_masthead_password">Password</label>
                                  
                                  <!-- password 입력하는 부분 -->
-                                 <input type="text" autocomplete="off" name="passWord" id="form_login_masthead_password" class="required list-group-form-control" placeholder="비밀번호" maxlength="20" value="" aria-required="true">
+                                 <input type="password" autocomplete="off" name="passWord" id="form_login_masthead_password" class="required list-group-form-control" placeholder="비밀번호" maxlength="20" value="" aria-required="true">
                               
                               
                               
@@ -2813,8 +2812,12 @@ $(function() {
 								
 							
 <!--*****************************************************************************************  -->						
-					<a class="slide-target slide-item action-ordernow cycle-slide" onclick="onPromoClick({ 'id':'10913','name':'보성녹돈','creative':'banner' + '1','position':'homepage'})" style="background-image: url(&quot;https://www.mcdelivery.co.kr/kr//static/1656543919591/assets/82/banners/landing_68317_WOS.jpg?WOS&quot;); position: absolute; top: 0px; left: 0px; z-index: 100; opacity: 0; display: none;" alt="WOS"> </a><a class="slide-target slide-item action-ordernow cycle-slide cycle-slide-active" onclick="onPromoClick({ 'id':'10911','name':'레몬 맥피즈(ROD)','creative':'banner' + '2','position':'homepage'})" style="background-image: url(&quot;https://www.mcdelivery.co.kr/kr//static/1656543919591/assets/82/banners/landing_68320_WOS.jpg?WOS&quot;); position: absolute; top: 0px; left: 0px; z-index: 99; display: block; opacity: 1;" alt="WOS"> </a><a class="slide-target slide-item action-ordernow cycle-slide" onclick="onPromoClick({ 'id':'10899','name':'맥크리스피','creative':'banner' + '3','position':'homepage'})" style="background-image: url(&quot;https://www.mcdelivery.co.kr/kr//static/1656543919591/assets/82/banners/landing_68150_WOS.jpg?WOS&quot;); position: absolute; top: 0px; left: 0px; z-index: 97; display: none;" alt="WOS"> </a></div>
-
+					
+					<c:forEach items="${MdList}" var="dtom">
+					<a class="slide-target slide-item action-ordernow cycle-slide" onclick="onPromoClick({ 'id':'10913','name':'보성녹돈','creative':'banner' + '1','position':'homepage'})" style="background-image: url('${dtom.IMGVD_PATH}'); position: absolute; top: 0px; left: 0px; z-index: 100; opacity: 0; display: none;" alt="WOS"> </a></c:forEach></div>
+					
+					
+					
 
 					<!-- Begin Delivery Options Panel -->
 					<div class="panel panel-home-masthead panel-home-masthead-order">
@@ -2850,7 +2853,7 @@ $(function() {
 								
 										
 										
-										<!-- th:block th:if="${session.webOrder != null}" th:uText="${session.webOrder.cart.isCartEmpty()}"></th:block-->
+										
 										
 
  								

@@ -37,6 +37,7 @@ public class MdMainLogonHandler implements CommandHandler{
 			System.out.println(">memberDTO 갯수"+memberDTO.getAdr_code());
 			HttpSession session = request.getSession(true);
 			session.setAttribute("Member", memberDTO);
+			session.setAttribute("mem_id", userId);
 			return "/mcNew/md/mdmain.do";
 		}
 
