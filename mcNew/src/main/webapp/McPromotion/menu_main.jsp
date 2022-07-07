@@ -276,7 +276,7 @@
 					</div>
 				</div>
 			</div>
-			 <form id="searchForm" method="post">
+			 <form id="searchForm" method="get">
 				<input type="hidden" name="page" id="page" value="1">
 				<input type="hidden" name="seq" id="seq">
 				<input type="hidden" name="sub_category_seq" id="sub_category_seq" value="1">
