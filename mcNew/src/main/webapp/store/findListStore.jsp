@@ -740,7 +740,7 @@ function go(){
     	search_options[index] = this.id;
     });
 	$("#search_options").val(search_options.join(","));
-	$("#searchForm").attr("action","/kor/store/list.do");
+	$("#searchForm").attr("action","<%=contextPath%>/store/list.do");
 	$("#searchForm").submit();
 }
 function gohttps(){

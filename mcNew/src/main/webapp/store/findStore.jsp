@@ -291,7 +291,7 @@
 						</ul>
 						
 						<!-- ******************************************** -->
-						<form id="searchForm" method="post">
+						<form id="searchForm" method="get">
 							<input type="hidden" name="page" id="page" value="1">
 							<input type="hidden" name="lat" id="lat" value="NO">
 							<input type="hidden" name="lng" id="lng" value="NO">

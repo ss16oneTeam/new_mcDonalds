@@ -1,9 +1,11 @@
+<%@page import="domain.MemberDTO"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%
    	//세션 자동 삭제
    	//세션 강제 삭제
-	String logonID = (String)session.getAttribute("mem_id");
+	/* String logonID = (String)session.getAttribute("mem_id"); */
+	String logonID = ((MemberDTO)session.getAttribute("Member")).getMem_id();
 	System.out.print(logonID);
  
 %>
