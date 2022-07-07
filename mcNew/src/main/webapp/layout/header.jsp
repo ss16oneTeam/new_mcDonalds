@@ -182,10 +182,10 @@
 							<li>
 								<a href="/kor/promotion/list.do" class="dth1  ">What’s New</a>
 								<ul class="depth2">
-									<li><a href="/kor/promotion/list.do" class="dth2">프로모션</a></li>
-									<li><a href="/kor/news/list.do" class="dth2">새로운 소식</a></li>
+									<li><a href="<%=contextPath %>/promotion/list.do" class="dth2">프로모션</a></li>
+									<li><a href="<%=contextPath %>/news/list.do" class="dth2">새로운 소식</a></li>
 									<!--  li><a href="/kor/kitchen.do" class="dth2">주방공개의 날</a></li -->
-								    <li><a href="/kor/happymeal/list.do" class="dth2">이달의 해피밀</a></li> 
+								    <li><a href="<%=contextPath %>/happymeal/list.do" class="dth2">이달의 해피밀</a></li> 
 								</ul>
 							</li>
 							<li>
