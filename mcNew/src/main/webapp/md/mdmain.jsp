@@ -490,7 +490,7 @@
                      
                         <div class="frament-new-user section-border-top margin-bottom-0 centered-text">                           
                            
-                              <a class="btn btn-block btn-red btn-xl" style="margin-bottom: 4px;" onclick="             dataLayer.push({              'event':'trackEvent',              'vpv':'vpv_enter_delivery_address',              'eventDetails.category':'registration',              'eventDetails.action':'click',              'eventDetails.label':'register_homepage'             });             dataLayer.push({              'event':'trackEvent',              'eventDetails.category':'i am new',              'eventDetails.action':'click home page',              'eventDetails.label':'register now'             });            " href="guest.html">
+                              <a class="btn btn-block btn-red btn-xl" style="margin-bottom: 4px;" onclick="             dataLayer.push({              'event':'trackEvent',              'vpv':'vpv_enter_delivery_address',              'eventDetails.category':'registration',              'eventDetails.action':'click',              'eventDetails.label':'register_homepage'             });             dataLayer.push({              'event':'trackEvent',              'eventDetails.category':'i am new',              'eventDetails.action':'click home page',              'eventDetails.label':'register now'             });            " href="<%=contextPath%>/md/guest.do">
                                  
                                  <span>회원가입</span>
                               </a>
