@@ -1,12 +1,10 @@
 package command;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import domain.N_NewsDTO;
-import service.DetailService;
+import service.NewsDetailService;
 
 public class DetailHandler implements CommandHandler{
 
@@ -16,7 +14,7 @@ public class DetailHandler implements CommandHandler{
 		int seq = Integer.parseInt(request.getParameter("seq"));
 		System.out.println(seq);
 		int noti= Integer.parseInt(request.getParameter("noti"));
-		 DetailService detailService =  DetailService.getInstance()
+		NewsDetailService detailService =  NewsDetailService.getInstance()
 				 ;
 		if(noti==0) {//일반글 noti ==1 
 		 N_NewsDTO dto=detailService.viewList(seq);

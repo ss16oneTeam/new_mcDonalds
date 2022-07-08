@@ -179,7 +179,7 @@
 								<a href="/kor/promotion/list.do" class="dth1  current">What’s New</a>
 								<ul class="depth2">
 									<li><a href="/kor/promotion/list.do" class="dth2">프로모션</a></li>
-									<li><a href="<%=contextPath %>/kor/news/list.do" class="dth2">새로운 소식</a></li>
+									<li><a href="<%=contextPath %>/news/list.do" class="dth2">새로운 소식</a></li>
 									<!--  li><a href="/kor/kitchen.do" class="dth2">주방공개의 날</a></li -->
 								    <li><a href="/kor/happymeal/list.do" class="dth2">이달의 해피밀</a></li> 
 								</ul>
@@ -298,7 +298,7 @@
 							
 							<div class="btnArea">
 								
-								<a href="<%=contextPath %>/kor/news/list.do" role="button" class="btnMC btnM"><span>목록보기</span></a>
+								<a href="<%=contextPath %>/news/list.do" role="button" class="btnMC btnM"><span>목록보기</span></a>
 								
 								<button type="button" onclick="javascript:goDetail(573,2 );" class="next">다음 글 보기</button>
 								
