@@ -298,7 +298,7 @@
 							
 							<div class="btnArea">
 								
-								<a href="<%=contextPath %>/news/list.do" role="button" class="btnMC btnM"><span>목록보기</span></a>
+								<a href="<%=contextPath %>/kor/news/list.do" role="button" class="btnMC btnM"><span>목록보기</span></a>
 								
 								<button type="button" onclick="javascript:goDetail(573,2 );" class="next">다음 글 보기</button>
 								

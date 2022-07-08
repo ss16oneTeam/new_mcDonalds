@@ -50,6 +50,7 @@
 		<jsp:include page="/layout/header.jsp"></jsp:include>
 
 
+
 		<!-- //header -->
 		<div id="container">
 			<div class="content">
@@ -96,7 +97,7 @@
 									<ul class="bbsList">
 										<c:forEach items="${nlist}" var="ndto" varStatus="st2">
 														<li class="notice">
-																	<a href="<%=contextPath %>/news/detail.do?seq=${ndto.n_CODE}&noti=${ndto.n_NOTI}" >
+																	<a href="<%=contextPath %>/kor/news/detail.do?seq=${ndto.n_CODE}&noti=${ndto.n_NOTI}" >
 																	<span class="bNum">
 																	<b class="ico">공지</b>
 															</span> <span class="bSubject"> <strong class="tit">${ndto.n_TITLE}</strong></span>
@@ -104,7 +105,7 @@
 														</a></li>
 													</c:forEach>
 								<c:forEach items="${list}" var="dto" varStatus="st">
-								<li class="notice"><a href="<%=contextPath %>/news/detail.do?seq=${dto.n_CODE}&noti=${dto.n_NOTI}" >
+								<li class="notice"><a href="<%=contextPath %>/kor/news/detail.do?seq=${dto.n_CODE}&noti=${dto.n_NOTI}" >
 															<span class="bNum"> 
 															<span class="hide">게시물번호</span>${list.size()-st.count+1}
 														</span> <span class="bSubject"><strong class="tit">${dto.n_TITLE}</strong></span>
