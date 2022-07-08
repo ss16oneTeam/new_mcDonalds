@@ -28,9 +28,9 @@
 <link rel="shortcut icon" type="image/x-icon" href="https://www.mcdonalds.co.kr/kor/images/favicon.ico">
 <link rel="stylesheet" href="https://www.mcdonalds.co.kr/kor/css/common.css?t=2022012502"> 
 <link rel="alternate" href="https://www.mcdonalds.co.kr">
-<script src="https://www.mcdonalds.co.kr/kor/js/libs.js"></script>
+<!-- <script src="https://www.mcdonalds.co.kr/kor/js/libs.js"></script>
 <script src="https://www.mcdonalds.co.kr/kor/js/common.js?t=2022012502"></script>
-<script src="https://www.mcdonalds.co.kr/kor/js/popup.js"></script>
+<script src="https://www.mcdonalds.co.kr/kor/js/popup.js"></script> -->
 <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7d2849da01922567115797fadd6e5ca4"></script> -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-15032749-2"></script>
 <script>
