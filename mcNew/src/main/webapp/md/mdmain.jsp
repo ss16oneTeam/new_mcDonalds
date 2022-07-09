@@ -458,7 +458,7 @@
                               <div class="list-group-item textfield-list-group-item">
                                  <label class="sr-only" for="form_login_masthead_username">Email</label>
                                  <!-- id 입력하는 부분 -->
-                                 <input type="text" autocomplete="off" name="userName" id="form_login_masthead_username" class="required email list-group-form-control" placeholder="아이디" value="" aria-required="true">
+                                 <input type="text" autocomplete="off" name="userName" id="form_login_masthead_username" class="required email list-group-form-control" placeholder="아이디" value="ham@sist.co.kr" aria-required="true">
                               
                               
                               </div>
@@ -466,7 +466,7 @@
                                  <label class="sr-only" for="form_login_masthead_password">Password</label>
                                  
                                  <!-- password 입력하는 부분 -->
-                                 <input type="password" autocomplete="off" name="passWord" id="form_login_masthead_password" class="required list-group-form-control" placeholder="비밀번호" maxlength="20" value="" aria-required="true">
+                                 <input type="password" autocomplete="off" name="passWord" id="form_login_masthead_password" class="required list-group-form-control" placeholder="비밀번호" maxlength="20" value="qwer1234" aria-required="true">
                               
                               
                               
