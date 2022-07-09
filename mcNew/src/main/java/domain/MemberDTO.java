@@ -11,10 +11,6 @@ public class MemberDTO {
    private String adr_code;
    private int check;
 
-   
-   
-
-
 public MemberDTO() {
       super();
    }
@@ -34,6 +30,18 @@ public MemberDTO() {
       this.check = check;
    }
 
+   
+   //회원가입을 위한 
+   public MemberDTO(String mem_id, String mem_pw, String mem_gender, String mem_name, String mem_tel) {
+	      super();
+	  
+	      this.mem_id = mem_id;
+	      this.mem_pw = mem_pw;
+	      this.mem_gender = mem_gender;
+	      this.mem_name = mem_name;
+	      this.mem_tel = mem_tel;
+	   
+	   }
    public int getCheck() {
 	   return check;
    }

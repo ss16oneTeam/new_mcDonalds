@@ -2,8 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ include file = "/include.jspf" %>
-
-
 <html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths no-ieolderthan9 js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths no-ieolderthan9 js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths no-ieolderthan9" style="" dir="ltr" lang="ko"><!--<![endif]--><head>
 
 </head><body class="country-82 lang-ko page-guest-enter-delivery-address"><iframe src="javascript:void(0)" title="" role="presentation" style="width: 0px; height: 0px; border: 0px; display: none;"></iframe><iframe src="javascript:void(0)" title="" role="presentation" style="width: 0px; height: 0px; border: 0px; display: none;"></iframe><iframe src="javascript:void(0)" title="" role="presentation" style="width: 0px; height: 0px; border: 0px; display: none;"></iframe><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-KM4PZ8"></script><script src="https://connect.facebook.net/signals/config/942592095866536?v=2.9.64&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/u/analytics_debug.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-KM4PZ8"></script><script src="https://connect.facebook.net/signals/config/942592095866536?v=2.9.64&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/u/analytics_debug.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/linkid.js"></script><script src="https://connect.facebook.net/signals/config/942592095866536?v=2.9.64&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/u/analytics_debug.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-KM4PZ8"></script><script type="text/javascript">
@@ -1574,10 +1572,10 @@ $(document).ready(function() {
 			<div id="guest_submit_button">
 			<fieldset class="fieldset form-actions">
 				<div class="form-group">
-					
+					<a href="<%=contextPath %>/md/register.do">
 						<button type="submit" id="submit_button" name="submit_button" class="btn btn-red btn-xl btn-submit" onclick="         dataLayer.push({          'event':'trackEvent',          'vpv':'vpv_confirm_delivery_address',          'eventDetails.category':'registration',          'eventDetails.action':'click',          'eventDetails.label':'confirm_delivery_address'         });">확인</button>
 	  				
-	  				
+	  				</a>
 				</div>
 				
 			
@@ -1812,7 +1810,7 @@ $(document).ready(function() {
 													</a>
 													<div id="member-benefits" class="popover-wrapper popover-details">
 														<div class="popover-wrapper">
-															<h5 class="text-default">신규 계정 생성</h5>
+															<h5 class="text-default">신규 계정 </h5>
 															<div class="guest-order-note" style="max-width: 300px !important; width:300px !important;">맥딜리버리 회원에게만 제공되는 할인 및 프로모션 혜택을 누리고, 지난 주문 내역을 검색하거나 즐겨찾기 메뉴를 이용해서 더 빠르고 편리하게 맥딜리버리를 이용하세요.</div>
 														</div>
 													</div>
