@@ -13,5 +13,9 @@ public interface PromotionDAO {
 	
 	List<PromotionDTO> selectImg(Connection con)throws SQLException;
 	ArrayList<PromotionDTO> PMorebtn(Connection con, String lastno)throws SQLException;
+	
+List<PromotionDTO> selectHpList(Connection con)throws SQLException;
+	
+	List<PromotionDTO> selectHpImg(Connection con)throws SQLException;
 		
 }
