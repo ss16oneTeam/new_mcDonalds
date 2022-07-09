@@ -19,10 +19,9 @@ public class GuestHandler implements CommandHandler{
 		
 		System.out.println("do_get호출 GuestHandler");
 		
-				
-		
 		return "/md/guest.jsp";
 
+		
 	}
 
 

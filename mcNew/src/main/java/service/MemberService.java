@@ -8,6 +8,7 @@ import javax.naming.NamingException;
 import com.util.ConnectionProvider;
 import com.util.JdbcUtil;
 
+import domain.MemAdrDTO;
 import domain.MemberDTO;
 import persistence.MemberDAOImpl;
 
@@ -53,5 +54,25 @@ public class MemberService {
 		}
 
 	}
+
+
+
+	public int insertOneMember(MemberDTO memberDTO , MemAdrDTO memAdrDTO) {
+		Connection con = null;
+		try {
+			con = ConnectionProvider.getConnection();
+			MemberDAOImpl dao =MemberDAOImpl.getInstance();
+			//insert문에서는 서브쿼리를 쓸 수 없기때문에, 주소입력따로 회원정보입력따로 
+			String adrCode=dao.insertAddress(con, memAdrDTO);
+			int result= dao.insertOneMember(con,  memberDTO, adrCode);
+			return result;
+		} catch (NamingException | SQLException e) { 
+			//e.printStackTrace(); 
+			throw new RuntimeException(e);
+		} finally {
+			JdbcUtil.close(con);
+		}
+
+}
 
 }

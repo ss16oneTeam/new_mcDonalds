@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 import com.util.JdbcUtil;
 
+import domain.MemAdrDTO;
 import domain.MemberDTO;
 
 public class MemberDAOImpl implements MemberDAO{
@@ -93,4 +94,75 @@ public class MemberDAOImpl implements MemberDAO{
 		return dto;
 	}
 
+	public int insertOneMember(Connection con, MemberDTO memberDTO, String adrCode)   throws SQLException{
+		System.out.println(" lnsert회원가입()- lmpl시작");
+		int result=0;
+		String lan="한국어";
+			/* MEM_CODE ,MEM_ID ,MEM_PW ,MEM_GENDER ,MEM_NAME ,MEM_TEL ,MEM_LAN ,ADR_CODE */
+		String sql = "insert into member values ('m'||member_seq.nextval,?,?, ?,?,?,?,?)";
+
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1,  memberDTO.getMem_id());
+			pstmt.setString(2, memberDTO.getMem_pw());
+			pstmt.setString(3, memberDTO.getMem_gender());
+			pstmt.setString(4, memberDTO.getMem_name());
+			pstmt.setString(5, memberDTO.getMem_tel());
+			pstmt.setString(6,lan);
+			pstmt.setString(7, adrCode);
+			result=pstmt.executeUpdate();
+			 
+		} finally {
+			JdbcUtil.close(pstmt);
+			JdbcUtil.close(rs);         
+		} // finally
+		System.out.println("result:"+result);
+return result;
+	}//insertOneMember
+	
+	
+
+	public String  insertAddress(Connection con, MemAdrDTO memAdrDTO) throws SQLException {
+		System.out.println(" impl -  insertAddress() 시작");
+		System.out.println(memAdrDTO.getAdr_main());
+		System.out.println(memAdrDTO.getAdr_sub());
+		String adrCode="";
+		int result=0;
+		String sql = "insert into mem_adr(adr_code, adr_main, adr_sub) values ('a'||memAdr_seq.nextval,?,?)";
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1,  memAdrDTO.getAdr_main());
+			pstmt.setString(2, memAdrDTO.getAdr_sub());
+			/* rs=pstmt.executeQuery(); */
+			result=pstmt.executeUpdate();
+			System.out.println("result: "+result);
+			if(result==1) {
+				System.out.println("이제 adr코드 가져올게");
+				//문제점!!!!!!!여기가 안나온다.  - >select 하는 쿼리문 다시 써보기  
+				sql="select adr_code from mem_adr where adr_main=? and adr_sub=?";
+				try {
+					pstmt = con.prepareStatement(sql);
+				
+					pstmt.setString(1, memAdrDTO.getAdr_main());
+					pstmt.setString(2, memAdrDTO.getAdr_sub());
+					
+					rs=pstmt.executeQuery();
+					if(rs.next()){
+						adrCode=rs.getString("adr_code"); //회원가입의 외부키가 될 것 
+						System.out.println("adrCode:"+adrCode);	
+					}
+				}finally {
+					
+				}
+			}
+		} finally {
+			JdbcUtil.close(pstmt);
+			JdbcUtil.close(rs);         
+		} // finally
+		
+		System.out.println("adrCode: "+adrCode);
+			return adrCode;
+		
+	}
 }
+
