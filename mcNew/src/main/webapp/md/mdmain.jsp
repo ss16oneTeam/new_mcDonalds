@@ -252,7 +252,7 @@
                <div class="main-navigation clearfix">
                   <ul class="nav navbar-nav">
                      
-                     <li class="menu-item menu-item-menu"><a class="menu-item-target" href="/kr/menu.html"> <i class="fa mcd mcd-burger icon"></i> 메뉴
+                     <li class="menu-item menu-item-menu"><a class="menu-item-target" href="<%=contextPath %>/Delivery/Dlist.do"> <i class="fa mcd mcd-burger icon"></i> 메뉴
                      </a> </li>
 
 
