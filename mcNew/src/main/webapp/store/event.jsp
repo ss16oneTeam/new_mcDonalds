@@ -99,9 +99,19 @@
 				<div class="contArea">
 					<div class="inner">
 						<ul class="tabType01">
-							<li><a href="<%=contextPath%>/store/main.do" role="button">지역별</a></li>
-							<li><a href="/kor/store/event.do" role="button" aria-selected="true">이벤트매장</a></li>
+							<li><a href="<%=contextPath %>/store/main.do" role="button" id="test1" aria-selected="true">지역별</a></li>
+							<li><a href="<%=contextPath %>/store/event.do" role="button" id="test2">이벤트매장</a></li>
 						</ul>
+						<script>
+						$("#test2").css("color","#db0007")
+								   .css("font-weight","600")
+								   .css("border-bottom","2px solid #db0007");
+						$("#test1").css("color","#808080")
+								   .css("font-weight","500")
+								   .css("font-size","20px")
+								   .css("line-height","1.9")
+								   .css("border-bottom","1px solid white");
+						</script>
 						<div class="eventStore2">
 							<div class="topInfo">
 								<h2>스트로베리 아이스크림 판매 매장입니다.</h2>

@@ -5,13 +5,13 @@
    	//세션 자동 삭제
    	//세션 강제 삭제
 	/* String logonID = (String)session.getAttribute("mem_id"); */
-	String logonID = ((MemberDTO)session.getAttribute("Member")).getMem_id();
-	System.out.print(logonID);
+	String logonName = ((MemberDTO)session.getAttribute("Member")).getMem_name();
+	System.out.print(logonName);
  
 %>
 
 <script>
-	alert("[<%= logonID%>]님 로그아웃 하셨습니다.")
+	alert("[<%= logonName%>]님 로그아웃 하셨습니다.")
 </script>
 
 <%  	

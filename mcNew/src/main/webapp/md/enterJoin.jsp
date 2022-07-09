@@ -326,11 +326,29 @@
 						</div>
 						<div class="panel-body"><!--  <strong>kimjm0240@naver.com</strong> -->
 							<p>입력한 이메일 주소로 인증메일이 발송되었습니다. </p><p>회원 가입을 위해 이메일 내용을 확인하세요.</p><p>5분안에 인증 메일을 받지 못하신 경우, 스팸 메일을 확인하시거나 인증 메일 재발송을 위해 <a href="sendActivate.html">여기</a>를 클릭하세요. </p> 
+						<br>
+						<form action="/mcNew/md/mdmain.do">
+			        		<input type="submit" id="jjin" value="메인으로"></input>
+				        </form>
+						
 						</div>
+						
 					</div>
 				</div>
 			</div>
 			</div>
+			<script>
+			   		$("#jjin")
+			   					.css('color','white')
+						   		.css('border','1px solid #d21920')
+						   		.css('background-color','#d21920')
+						   		.css('font-size','1.5rem')
+						   		.css('border-radius','4px')
+						   		.css('padding','8px 16px')
+			   					.css('background-image','linear-gradient(#ec4c34,#d21920)');
+			</script>
+			
+			
 			<div class="global-footer">
 			<div class="footer-nav">
 				<div class="container">

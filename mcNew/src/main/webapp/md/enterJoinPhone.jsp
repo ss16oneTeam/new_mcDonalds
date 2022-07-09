@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths no-ieolderthan9" style="" dir="ltr" lang="ko"><head>
-
+<script type="text/javascript"> history.replaceState({}, null, location.pathname); </script>
 <!--<![endif]--><iframe src="javascript:void(0)" title="" style="width: 0px; height: 0px; border: 0px none; display: none;"></iframe><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/linkid.js"></script><script src="https://connect.facebook.net/signals/config/942592095866536?v=2.9.64&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/u/analytics_debug.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-KM4PZ8"></script><script type="text/javascript">
 	if(self===top)
 	{
@@ -28,8 +28,14 @@
 	} else {
 	  document.addEventListener('DOMContentLoaded', passwordValidCallback);
 	}
-/*]]>*/	
+
+	
+
 </script>
+
+
+
+
 <script>
  		var dataLayer = dataLayer || [];
 	</script>
@@ -326,11 +332,31 @@
 						</div>
 						<div class="panel-body"><!--  <strong>kimjm0240@naver.com</strong> -->
 							<p>입력한 휴대폰 번호로 sms가 발송되었습니다. </p><p>회원 가입을 위해 sms 내용을 확인하세요.</p><p>5분안에 인증sms을 받지 못하신 경우, 스팸sms을 확인하시거나 인증 sms 재발송을 위해 <a href="sendActivate.html">여기</a>를 클릭하세요. </p> 
+						<br>
+						<form action="/mcNew/md/mdmain.do" method="get">
+			        		<input type="submit" id="jjin" value="메인으로"></input>
+				        </form>
 						</div>
 					</div>
 				</div>
 			</div>
 			</div>
+			<script>
+			   		$("#jjin")
+			   					.css('color','white')
+						   		.css('border','1px solid #d21920')
+						   		.css('background-color','#d21920')
+						   		.css('font-size','1.5rem')
+						   		.css('border-radius','4px')
+						   		.css('padding','8px 16px')
+			   					.css('background-image','linear-gradient(#ec4c34,#d21920)');
+			   		
+			   		
+			</script>
+			
+			
+			
+			
 			<div class="global-footer">
 			<div class="footer-nav">
 				<div class="container">

@@ -59,8 +59,8 @@ public class JoinMemberHandler implements CommandHandler{
 	
 		if(result==1){
 			System.out.println("회원가입 성공");
-		
-			 if(authen[0]=="1") {//이메일 
+			System.out.println("-----------------------------------------------------");
+			 if(authen[0].equals("1")) {//이메일 
 				 return "/mcNew/md/enterJoin.jsp"; 
 				 }
 			 else {//휴대폰

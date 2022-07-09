@@ -277,7 +277,7 @@
 						</ul>-->
 						<!-- //수정 -->
 						<div class="btnArea">
-							<a href="/store/list.do;" class="btnMC btnL">맥드라이브 매장 검색하기</a>
+							<a href="<%=contextPath %>/store/list.do" class="btnMC btnL">맥드라이브 매장 검색하기</a>
 						</div>
 					</div>
 				</div>

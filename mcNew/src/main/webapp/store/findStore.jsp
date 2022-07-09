@@ -286,7 +286,7 @@
 				<div class="contArea">
 					<div class="inner">
 						<ul class="tabType01">
-							<li><a href="/kor/store/main.do" role="button" aria-selected="true">지역별</a></li>
+							<li><a href="<%=contextPath %>/store/main.do" role="button" aria-selected="true">지역별</a></li>
 							<li><a href="<%=contextPath %>/store/event.do" role="button">이벤트매장</a></li>
 						</ul>
 						
