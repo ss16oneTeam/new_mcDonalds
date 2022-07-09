@@ -171,7 +171,7 @@
 								</ul>
 							</li>
 							<li>
-								<a href="/kor/store/main.do" class="dth1 ">Store</a>
+								<a href="<%=contextPath %>/store/main.do" class="dth1 ">Store</a>
 								<ul class="depth2">
 									<li><a href="<%=contextPath %>/store/main.do" class="dth2">매장찾기</a></li>
 									<li><a href="<%=contextPath %>/store/mcdelivery.do" class="dth2">맥딜리버리</a></li>
