@@ -1040,7 +1040,7 @@
 	<div class="configurator-header">
 		<div class="container">
 			<div class="row">
-			<c:forEach items="${ModlaList }" var="dto" varStatus="status" begin="1" end="1">>   
+			<c:forEach items="${ModlaList }" var="dto" varStatus="status" begin="1" end="1">
 				<div class="quantity"><span class="added-quantity added-qnt" >0</span> <span class="small text-ucase show-on-expand">수량</span></div>
 				<div class="picture show-on-expand text-center"><img src="${ModlaList[0].img_path }" alt=""></div>
 				<div class="description">
@@ -1434,8 +1434,8 @@
 			          											data:optionid,
 			          											cache:false,                     
 			          											success:function (data){ 
-			          												let str = JSON.stringify(data); // <> parse()
-			          												alert(str); 
+			          												//let str = JSON.stringify(data); // <> parse()
+			          												//alert(str); 
 			          												var modal="";
 			          												
 			          												modal="<div class='modal fade in'  id='optionModal' aria-hidden='false' style='display: none;'><div class='modal-backdrop fade in' style='height: 929px;'></div>"
