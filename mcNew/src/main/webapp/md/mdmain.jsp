@@ -244,7 +244,7 @@
             </div>
             <div class="global-navbar navbar navbar-default" role="navigation">
                <div class="navbar-header">
-                  <a class="navbar-brand wos-brand" href="/kr/home.html">  
+                  <a class="navbar-brand wos-brand" href="<%=contextPath %>/md/mdmain.do">  
                         <img src="https://www.mcdelivery.co.kr/kr//static/1656543919591/assets/82/img/mcdelivery_logo_ko.jpg" alt="McDelivery&amp;trade;">
                      
                   </a>
@@ -2593,7 +2593,7 @@ $(function() {
 				</div>
 				<div class="global-navbar navbar navbar-default" role="navigation">
 					<div class="navbar-header">
-						<a class="navbar-brand wos-brand" href="/kr/home.html">  
+						<a class="navbar-brand wos-brand" href="<%=contextPath %>/md/mdmain.do">  
 								<img src="https://www.mcdelivery.co.kr/kr//static/1656543919591/assets/82/img/mcdelivery_logo_ko.jpg" alt="McDelivery&amp;trade;">
 							
 						</a>
@@ -2830,7 +2830,7 @@ $(function() {
 						</div>
 						<div class="panel-body">
 							<div class="panel-home-masthead-form">
-								<form name="form_select_address" id="form_select_delivery_address" method="post" accept-charset="utf-8" role="form" class="panel-home-masthead-form" action="/kr/home.html">
+								<form name="form_select_address" id="form_select_delivery_address" method="get" accept-charset="utf-8" role="form" class="panel-home-masthead-form" action="<%=contextPath %>/Delivery/Dlist.do">
 									<div class="form-group">
 										<label for="form_select_address_delivery_address" class="control-label">다음의 주소로 배달됩니다:</label>
 										<!--  <select class="address-picker hide-default-error" name="address" id="form_select_address_delivery_address" tabindex="0" style="display: none;" aria-disabled="false">
@@ -2844,11 +2844,35 @@ $(function() {
 										
 									</div>
 									
+									<button onclick="location.href='<%=contextPath %>/Delivery/Dlist.do'" id="final_check">새로운 주문하기</button>
+									<script>
+									$("#final_check").css("background-color","#ec4c34")
+													.css("border","1px solid transparent")
+													.css("font-weight","400")
+													.css("text-align","center")
+													.css("vertical-align","middle")
+													.css("touch-action","manipulation")
+													.css("white-space","nowrap")
+													.css("border-width","1px")
+													.css("border-color","#d21920")
+													.css("background-image","linear-gradient(#ec4c34,#d21920)")
+													.css("font-size","1.5rem")
+													.css("border-radius","4px")
+													.css("line-height","1.33")
+													.css("margin-bottom","5px")
+													.css("line-height","5px")
+													.css("width","100%")
+													.css("padding","20px 16px")
+												
+													
+									</script>
+									
+									
 									<fieldset class="form-actions">
 										<p class="address-status">약 50 분 후 배달 도착 예정입니다.</p>
 										
 										
-											<a class="btn btn-red btn-block btn-xl btn-submit action-startneworder" onclick="dataLayer.push({          'event': 'trackEvent',          'vpv': 'vpv_start_new_order',          'eventDetails.category': 'order',          'eventDetails.action': 'click',          'eventDetails.label': 'start_new_order'         });           dataLayer.push({          'event': 'trackEvent',          'eventDetails.category': 'type of order',          'eventDetails.action': 'existing customer',          'eventDetails.label': 'order now'         });" href="/kr/newOrder.html">새로 주문하기</a>
+											<%-- <a class="btn btn-red btn-block btn-xl btn-submit action-startneworder" onclick="dataLayer.push({          'event': 'trackEvent',          'vpv': 'vpv_start_new_order',          'eventDetails.category': 'order',          'eventDetails.action': 'click',          'eventDetails.label': 'start_new_order'         });           dataLayer.push({          'event': 'trackEvent',          'eventDetails.category': 'type of order',          'eventDetails.action': 'existing customer',          'eventDetails.label': 'order now'         });" href="<%=contextPath %>/Delivery/Dlist.do">새로 주문하기</a> --%>
 								
 								
 										

@@ -79,7 +79,7 @@
 <script>
 		$(window).on('load',function()
 		{
-			// commonJs.menu.TopActive(idx(0~3))	menu : 0 , store : 1 , what's news : 2 , story : 3 서브페이지에 메뉴 순번에 맞춰서 활성화 
+			// commonJs.menu.TopActive(idx(0~3))	menu : 0 , store : 1 ,what's news : 2 , story : 3 서브페이지에 메뉴 순번에 맞춰서 활성화 
 			// commonJs.menu.TopDeActive()			활성화 해제
 			// commonJs.menu.TopActive( 2 );
 			// setWebTitle();
@@ -180,7 +180,7 @@
 								</ul>
 							</li>
 							<li>
-								<a href="/<%=contextPath %>/promotion/list.do" class="dth1  ">What’s New</a>
+								<a href="<%=contextPath %>/promotion/list.do" class="dth1  ">What’s New</a>
 								<ul class="depth2">
 									<li><a href="<%=contextPath %>/promotion/list.do" class="dth2">프로모션</a></li>
 									<li><a href="<%=contextPath %>/news/list.do" class="dth2">새로운 소식</a></li>
