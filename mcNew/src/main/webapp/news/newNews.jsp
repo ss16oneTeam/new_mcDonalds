@@ -3,7 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page isELIgnored="false"%>
-<%@ include file="/include.jspf"%>
+<%@ include file="/layout/header.jsp" %>
+<%@ include file="/layout/footer.jsp" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,12 +49,7 @@
 	<div class="skipMenu">
 		<a href="#container">본문 바로가기</a>
 	</div>
-	<div class="wrapper ">
-		<jsp:include page="/layout/header.jsp"></jsp:include>
-
-
-
-		<!-- //header -->
+	
 		<div id="container">
 			<div class="content">
 
@@ -263,10 +261,7 @@
 			<button type="button" class="btnTop">맨 위로 가기</button>
 		</div>
 		<!-- //container -->
-		<jsp:include page="/layout/footer.jsp"></jsp:include>
-		<!-- //footer -->
-	</div>
-	<!-- //wrapper -->
+
 
 
 
