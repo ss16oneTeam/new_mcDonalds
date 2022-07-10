@@ -180,7 +180,7 @@
 								</ul>
 							</li>
 							<li>
-								<a href="/kor/promotion/list.do" class="dth1  ">What’s New</a>
+								<a href="/<%=contextPath %>/promotion/list.do" class="dth1  ">What’s New</a>
 								<ul class="depth2">
 									<li><a href="<%=contextPath %>/promotion/list.do" class="dth2">프로모션</a></li>
 									<li><a href="<%=contextPath %>/news/list.do" class="dth2">새로운 소식</a></li>
@@ -227,7 +227,7 @@
 			<script>
 				function gotoMenu(val){
 					$("#gotoform_sub_category_seq").val(val);
-					$("#gotoMenuForm").attr("action","list.do");
+					$("#gotoMenuForm").attr("action","/mcNew/McPromotion/list.do");
 					$("#gotoMenuForm").submit();
 				}
 						
